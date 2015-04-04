@@ -9,23 +9,24 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 
-namespace ECard.Forms.Code
+namespace ECard.Forms.Data
 {
-    public partial class TBLLabelUC : DevExpress.XtraEditors.XtraUserControl
+    public partial class TBLALLDataUC : DevExpress.XtraEditors.XtraUserControl
     {
-        public TBLLabelUC()
+        public TBLALLDataUC()
         {
             InitializeComponent();
 
+            cDGehaTableAdapter.Fill(dsData.CDGeha);
         }
         void LoadData()
         {
+
             mBar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             System.Threading.ThreadPool.QueueUserWorkItem((o) =>
             {
                 this.Invoke(new MethodInvoker(() =>
                 {
-                    cDGehaTableAdapter.Fill(dsData.CDGeha);
                     XPSCSData.Session.ConnectionString = Properties.Settings.Default.E_CardConnectionString;
                     gridControlMain.DataSource = XPSCSData;
                     mBar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -83,7 +84,7 @@ namespace ECard.Forms.Code
         private void gridViewMain_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
             DevExpress.Xpo.Metadata.XPDataTableObject obj = (DevExpress.Xpo.Metadata.XPDataTableObject)gridViewMain.GetRow(e.RowHandle);
-            obj.SetMemberValue("LabelId", -1);
+            obj.SetMemberValue("DataId", -1);
             obj.SetMemberValue("userin", Classes.Managers.UserManager.UserInfo.UserID);
             obj.SetMemberValue("datein", Classes.Managers.DataManager.GetServerDatetime);
         }
@@ -95,8 +96,8 @@ namespace ECard.Forms.Code
                 if (item.IsDeleted)
                     continue;
 
-                //if (item.GetMemberValue("LabelId").ToString() == "-1")
-                //    item.SetMemberValue("LabelId", Classes.Managers.DataManager.adpQry.GetNewId_TBLLabel());
+                //if (item.GetMemberValue("DataId").ToString() == "-1")
+                //    item.SetMemberValue("DataId", Classes.Managers.DataManager.adpQry.GetNewId_TBLLabel());
                 item.SetMemberValue("userin", Classes.Managers.UserManager.UserInfo.UserID);
                 item.SetMemberValue("datein", Classes.Managers.DataManager.GetServerDatetime);
             }

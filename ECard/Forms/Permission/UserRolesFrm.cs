@@ -46,7 +46,7 @@ namespace ECard.Forms.Permission
         }
         private void ActivePriv()
         {
-            return;//ActivePrivReady
+            //return;//ActivePrivReady
             bool Selecting = false, Inserting = false, Updateing = false, Deleting = false;
             Classes.Managers.DataManager.GetFormPriv(this.Name, ref Selecting, ref Inserting, ref  Updateing, ref  Deleting);
             LUEItems.Visible = Selecting;

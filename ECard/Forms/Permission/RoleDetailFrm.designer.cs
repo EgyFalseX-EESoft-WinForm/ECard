@@ -30,18 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleDetailFrm));
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             this.groupControlUpdate = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.CEUpdate = new DevExpress.XtraEditors.CheckEdit();
+            this.CESelect = new DevExpress.XtraEditors.CheckEdit();
+            this.CEDelete = new DevExpress.XtraEditors.CheckEdit();
+            this.CEInsert = new DevExpress.XtraEditors.CheckEdit();
             this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.buttonEdit = new DevExpress.XtraEditors.ButtonEdit();
             this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.someLabelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.someLabelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.CEUpdate = new DevExpress.XtraEditors.CheckEdit();
-            this.CESelect = new DevExpress.XtraEditors.CheckEdit();
-            this.CEDelete = new DevExpress.XtraEditors.CheckEdit();
-            this.CEInsert = new DevExpress.XtraEditors.CheckEdit();
             this.groupControlSelect = new DevExpress.XtraEditors.GroupControl();
             this.LUEItems = new DevExpress.XtraEditors.LookUpEdit();
             this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -53,27 +54,38 @@
             this.imageCollection16 = new DevExpress.Utils.ImageCollection(this.components);
             this.mbCDGeha = new DevExpress.XtraBars.BarButtonItem();
             this.mbTBLLabel = new DevExpress.XtraBars.BarButtonItem();
+            this.mbImportTBLALLDataUC = new DevExpress.XtraBars.BarButtonItem();
+            this.mbTBLALLDataUC = new DevExpress.XtraBars.BarButtonItem();
+            this.mbPrintCard1UC = new DevExpress.XtraBars.BarButtonItem();
+            this.mbUsers = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRoles = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRoleDetail = new DevExpress.XtraBars.BarButtonItem();
+            this.mbUserRoles = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.imageCollection32 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPageCode = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupCode = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageData = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupData = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageRoles = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageQry = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPagePrint = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroupPrint = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlUpdate)).BeginInit();
             this.groupControlUpdate.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).BeginInit();
-            this.popupControlContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).BeginInit();
-            this.popupControlContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CEUpdate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CESelect.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CEDelete.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CEInsert.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).BeginInit();
+            this.popupControlContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).BeginInit();
+            this.popupControlContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlSelect)).BeginInit();
             this.groupControlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEItems.Properties)).BeginInit();
@@ -98,6 +110,53 @@
             this.groupControlUpdate.Size = new System.Drawing.Size(963, 251);
             this.groupControlUpdate.TabIndex = 1;
             this.groupControlUpdate.Text = "التفاصيل";
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.groupControl2.AppearanceCaption.Options.UseTextOptions = true;
+            this.groupControl2.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.groupControl2.Controls.Add(this.CEUpdate);
+            this.groupControl2.Controls.Add(this.CESelect);
+            this.groupControl2.Controls.Add(this.CEDelete);
+            this.groupControl2.Controls.Add(this.CEInsert);
+            this.groupControl2.Location = new System.Drawing.Point(361, 169);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(240, 73);
+            this.groupControl2.TabIndex = 2;
+            this.groupControl2.Text = "عناصر السماح";
+            // 
+            // CEUpdate
+            // 
+            this.CEUpdate.Location = new System.Drawing.Point(21, 49);
+            this.CEUpdate.Name = "CEUpdate";
+            this.CEUpdate.Properties.Caption = "تعديل";
+            this.CEUpdate.Size = new System.Drawing.Size(75, 19);
+            this.CEUpdate.TabIndex = 0;
+            // 
+            // CESelect
+            // 
+            this.CESelect.Location = new System.Drawing.Point(21, 24);
+            this.CESelect.Name = "CESelect";
+            this.CESelect.Properties.Caption = "عرض";
+            this.CESelect.Size = new System.Drawing.Size(75, 19);
+            this.CESelect.TabIndex = 0;
+            // 
+            // CEDelete
+            // 
+            this.CEDelete.Location = new System.Drawing.Point(144, 49);
+            this.CEDelete.Name = "CEDelete";
+            this.CEDelete.Properties.Caption = "حذف";
+            this.CEDelete.Size = new System.Drawing.Size(75, 19);
+            this.CEDelete.TabIndex = 0;
+            // 
+            // CEInsert
+            // 
+            this.CEInsert.Location = new System.Drawing.Point(144, 24);
+            this.CEInsert.Name = "CEInsert";
+            this.CEInsert.Properties.Caption = "اضافه";
+            this.CEInsert.Size = new System.Drawing.Size(75, 19);
+            this.CEInsert.TabIndex = 0;
             // 
             // appMenu
             // 
@@ -156,53 +215,6 @@
             this.someLabelControl1.Size = new System.Drawing.Size(36, 13);
             this.someLabelControl1.TabIndex = 0;
             this.someLabelControl1.Text = "No Info";
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.groupControl2.AppearanceCaption.Options.UseTextOptions = true;
-            this.groupControl2.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.groupControl2.Controls.Add(this.CEUpdate);
-            this.groupControl2.Controls.Add(this.CESelect);
-            this.groupControl2.Controls.Add(this.CEDelete);
-            this.groupControl2.Controls.Add(this.CEInsert);
-            this.groupControl2.Location = new System.Drawing.Point(361, 169);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(240, 73);
-            this.groupControl2.TabIndex = 2;
-            this.groupControl2.Text = "عناصر السماح";
-            // 
-            // CEUpdate
-            // 
-            this.CEUpdate.Location = new System.Drawing.Point(21, 49);
-            this.CEUpdate.Name = "CEUpdate";
-            this.CEUpdate.Properties.Caption = "تعديل";
-            this.CEUpdate.Size = new System.Drawing.Size(75, 19);
-            this.CEUpdate.TabIndex = 0;
-            // 
-            // CESelect
-            // 
-            this.CESelect.Location = new System.Drawing.Point(21, 24);
-            this.CESelect.Name = "CESelect";
-            this.CESelect.Properties.Caption = "عرض";
-            this.CESelect.Size = new System.Drawing.Size(75, 19);
-            this.CESelect.TabIndex = 0;
-            // 
-            // CEDelete
-            // 
-            this.CEDelete.Location = new System.Drawing.Point(144, 49);
-            this.CEDelete.Name = "CEDelete";
-            this.CEDelete.Properties.Caption = "حذف";
-            this.CEDelete.Size = new System.Drawing.Size(75, 19);
-            this.CEDelete.TabIndex = 0;
-            // 
-            // CEInsert
-            // 
-            this.CEInsert.Location = new System.Drawing.Point(144, 24);
-            this.CEInsert.Name = "CEInsert";
-            this.CEInsert.Properties.Caption = "اضافه";
-            this.CEInsert.Size = new System.Drawing.Size(75, 19);
-            this.CEInsert.TabIndex = 0;
             // 
             // groupControlSelect
             // 
@@ -272,17 +284,26 @@
             this.ribbonControlMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControlMain.ExpandCollapseItem,
             this.mbCDGeha,
-            this.mbTBLLabel});
+            this.mbTBLLabel,
+            this.mbImportTBLALLDataUC,
+            this.mbTBLALLDataUC,
+            this.mbPrintCard1UC,
+            this.mbUsers,
+            this.mbRoles,
+            this.mbRoleDetail,
+            this.mbUserRoles,
+            this.ribbonGalleryBarItem1});
             this.ribbonControlMain.LargeImages = this.imageCollection32;
             this.ribbonControlMain.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControlMain.MaxItemId = 3;
+            this.ribbonControlMain.MaxItemId = 2;
             this.ribbonControlMain.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControlMain.Name = "ribbonControlMain";
             this.ribbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageCode,
             this.ribbonPageData,
             this.ribbonPageRoles,
-            this.ribbonPageQry});
+            this.ribbonPageQry,
+            this.ribbonPagePrint});
             this.ribbonControlMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControlMain.Size = new System.Drawing.Size(959, 142);
             // 
@@ -292,6 +313,16 @@
             this.imageCollection16.Images.SetKeyName(0, "CDGeha.png");
             this.imageCollection16.InsertGalleryImage("TBLLabel16.png", "images/chart/chart_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/chart/chart_16x16.png"), 1);
             this.imageCollection16.Images.SetKeyName(1, "TBLLabel16.png");
+            this.imageCollection16.InsertGalleryImage("print_16x16.png", "images/print/print_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/print/print_16x16.png"), 2);
+            this.imageCollection16.Images.SetKeyName(2, "print_16x16.png");
+            this.imageCollection16.InsertGalleryImage("customer_16x16.png", "images/people/customer_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/people/customer_16x16.png"), 3);
+            this.imageCollection16.Images.SetKeyName(3, "customer_16x16.png");
+            this.imageCollection16.InsertGalleryImage("technology_16x16.png", "images/programming/technology_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/programming/technology_16x16.png"), 4);
+            this.imageCollection16.Images.SetKeyName(4, "technology_16x16.png");
+            this.imageCollection16.InsertGalleryImage("customization_16x16.png", "images/edit/customization_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/edit/customization_16x16.png"), 5);
+            this.imageCollection16.Images.SetKeyName(5, "customization_16x16.png");
+            this.imageCollection16.InsertGalleryImage("publicfix_16x16.png", "images/people/publicfix_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/people/publicfix_16x16.png"), 6);
+            this.imageCollection16.Images.SetKeyName(6, "publicfix_16x16.png");
             // 
             // mbCDGeha
             // 
@@ -310,6 +341,81 @@
             this.mbTBLLabel.LargeImageIndex = 1;
             this.mbTBLLabel.Name = "mbTBLLabel";
             // 
+            // mbImportTBLALLDataUC
+            // 
+            this.mbImportTBLALLDataUC.Caption = "استيراد بيانات الكروت";
+            this.mbImportTBLALLDataUC.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.mbImportTBLALLDataUC.Id = 3;
+            this.mbImportTBLALLDataUC.ImageIndex = 1;
+            this.mbImportTBLALLDataUC.LargeImageIndex = 1;
+            this.mbImportTBLALLDataUC.Name = "mbImportTBLALLDataUC";
+            // 
+            // mbTBLALLDataUC
+            // 
+            this.mbTBLALLDataUC.Caption = "بيانات الكروت";
+            this.mbTBLALLDataUC.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.mbTBLALLDataUC.Id = 4;
+            this.mbTBLALLDataUC.ImageIndex = 1;
+            this.mbTBLALLDataUC.LargeImageIndex = 1;
+            this.mbTBLALLDataUC.Name = "mbTBLALLDataUC";
+            // 
+            // mbPrintCard1UC
+            // 
+            this.mbPrintCard1UC.Caption = "طباعة الكارت 1";
+            this.mbPrintCard1UC.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.mbPrintCard1UC.Id = 5;
+            this.mbPrintCard1UC.ImageIndex = 2;
+            this.mbPrintCard1UC.LargeImageIndex = 2;
+            this.mbPrintCard1UC.Name = "mbPrintCard1UC";
+            // 
+            // mbUsers
+            // 
+            this.mbUsers.Caption = "المستخدمين";
+            this.mbUsers.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.mbUsers.Id = 6;
+            this.mbUsers.ImageIndex = 3;
+            this.mbUsers.LargeImageIndex = 3;
+            this.mbUsers.Name = "mbUsers";
+            // 
+            // mbRoles
+            // 
+            this.mbRoles.Caption = "الصلاحيات";
+            this.mbRoles.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.mbRoles.Id = 7;
+            this.mbRoles.ImageIndex = 4;
+            this.mbRoles.LargeImageIndex = 4;
+            this.mbRoles.Name = "mbRoles";
+            // 
+            // mbRoleDetail
+            // 
+            this.mbRoleDetail.Caption = "تفاصيل الصلاحيات";
+            this.mbRoleDetail.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.mbRoleDetail.Id = 8;
+            this.mbRoleDetail.ImageIndex = 5;
+            this.mbRoleDetail.LargeImageIndex = 5;
+            this.mbRoleDetail.Name = "mbRoleDetail";
+            // 
+            // mbUserRoles
+            // 
+            this.mbUserRoles.Caption = "صلاحيات المستخدمين";
+            this.mbUserRoles.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.mbUserRoles.Id = 9;
+            this.mbUserRoles.ImageIndex = 6;
+            this.mbUserRoles.LargeImageIndex = 6;
+            this.mbUserRoles.Name = "mbUserRoles";
+            // 
+            // ribbonGalleryBarItem1
+            // 
+            this.ribbonGalleryBarItem1.Caption = "InplaceGallery1";
+            // 
+            // 
+            // 
+            galleryItemGroup1.Caption = "Group1";
+            this.ribbonGalleryBarItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
+            galleryItemGroup1});
+            this.ribbonGalleryBarItem1.Id = 1;
+            this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
+            // 
             // imageCollection32
             // 
             this.imageCollection32.ImageSize = new System.Drawing.Size(32, 32);
@@ -317,6 +423,16 @@
             this.imageCollection32.Images.SetKeyName(0, "CDGeha.png");
             this.imageCollection32.InsertGalleryImage("TBLLabel32.png", "images/chart/chart_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/chart/chart_32x32.png"), 1);
             this.imageCollection32.Images.SetKeyName(1, "TBLLabel32.png");
+            this.imageCollection32.InsertGalleryImage("print_32x32.png", "images/print/print_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/print/print_32x32.png"), 2);
+            this.imageCollection32.Images.SetKeyName(2, "print_32x32.png");
+            this.imageCollection32.InsertGalleryImage("customer_32x32.png", "images/people/customer_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/people/customer_32x32.png"), 3);
+            this.imageCollection32.Images.SetKeyName(3, "customer_32x32.png");
+            this.imageCollection32.InsertGalleryImage("technology_32x32.png", "images/programming/technology_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/programming/technology_32x32.png"), 4);
+            this.imageCollection32.Images.SetKeyName(4, "technology_32x32.png");
+            this.imageCollection32.InsertGalleryImage("customization_32x32.png", "images/edit/customization_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/edit/customization_32x32.png"), 5);
+            this.imageCollection32.Images.SetKeyName(5, "customization_32x32.png");
+            this.imageCollection32.InsertGalleryImage("publicfix_32x32.png", "images/people/publicfix_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/people/publicfix_32x32.png"), 6);
+            this.imageCollection32.Images.SetKeyName(6, "publicfix_32x32.png");
             // 
             // ribbonPageCode
             // 
@@ -341,18 +457,44 @@
             // ribbonPageGroupData
             // 
             this.ribbonPageGroupData.ItemLinks.Add(this.mbTBLLabel);
+            this.ribbonPageGroupData.ItemLinks.Add(this.mbImportTBLALLDataUC);
+            this.ribbonPageGroupData.ItemLinks.Add(this.mbTBLALLDataUC);
             this.ribbonPageGroupData.Name = "ribbonPageGroupData";
             this.ribbonPageGroupData.Text = "ribbonPageGroup2";
             // 
             // ribbonPageRoles
             // 
+            this.ribbonPageRoles.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
             this.ribbonPageRoles.Name = "ribbonPageRoles";
             this.ribbonPageRoles.Text = "الصلاحيات";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.mbUsers);
+            this.ribbonPageGroup1.ItemLinks.Add(this.mbRoles);
+            this.ribbonPageGroup1.ItemLinks.Add(this.mbRoleDetail);
+            this.ribbonPageGroup1.ItemLinks.Add(this.mbUserRoles);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "الصلاحيات";
             // 
             // ribbonPageQry
             // 
             this.ribbonPageQry.Name = "ribbonPageQry";
             this.ribbonPageQry.Text = "استعلامات";
+            // 
+            // ribbonPagePrint
+            // 
+            this.ribbonPagePrint.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroupPrint});
+            this.ribbonPagePrint.Name = "ribbonPagePrint";
+            this.ribbonPagePrint.Text = "الطباعة";
+            // 
+            // ribbonPageGroupPrint
+            // 
+            this.ribbonPageGroupPrint.ItemLinks.Add(this.mbPrintCard1UC);
+            this.ribbonPageGroupPrint.Name = "ribbonPageGroupPrint";
+            this.ribbonPageGroupPrint.Text = "طباعة الكروت";
             // 
             // RoleDetailFrm
             // 
@@ -368,6 +510,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControlUpdate)).EndInit();
             this.groupControlUpdate.ResumeLayout(false);
             this.groupControlUpdate.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CEUpdate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CESelect.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CEDelete.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CEInsert.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).EndInit();
             this.popupControlContainer2.ResumeLayout(false);
@@ -375,12 +523,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).EndInit();
             this.popupControlContainer1.ResumeLayout(false);
             this.popupControlContainer1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CEUpdate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CESelect.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CEDelete.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CEInsert.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlSelect)).EndInit();
             this.groupControlSelect.ResumeLayout(false);
             this.groupControlSelect.PerformLayout();
@@ -419,12 +561,23 @@
         private DevExpress.Utils.ImageCollection imageCollection16;
         private DevExpress.XtraBars.BarButtonItem mbCDGeha;
         private DevExpress.XtraBars.BarButtonItem mbTBLLabel;
+        private DevExpress.XtraBars.BarButtonItem mbImportTBLALLDataUC;
+        private DevExpress.XtraBars.BarButtonItem mbTBLALLDataUC;
+        private DevExpress.XtraBars.BarButtonItem mbPrintCard1UC;
+        private DevExpress.XtraBars.BarButtonItem mbUsers;
+        private DevExpress.XtraBars.BarButtonItem mbRoles;
+        private DevExpress.XtraBars.BarButtonItem mbRoleDetail;
+        private DevExpress.XtraBars.BarButtonItem mbUserRoles;
+        private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
         private DevExpress.Utils.ImageCollection imageCollection32;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageCode;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupCode;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageData;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupData;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageRoles;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageQry;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPagePrint;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupPrint;
     }
 }

@@ -41,16 +41,31 @@
     <ApplicationIcon>ECard.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.Data.v14.2">
       <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Images.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Office.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.Printing.v14.2.Core">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.RichEdit.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.Utils.v14.2">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.2.UI, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Xpo.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
@@ -62,7 +77,13 @@
     <Reference Include="DevExpress.Sparkline.v14.2.Core">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.XtraEditors.v14.2">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
@@ -72,6 +93,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.2.Extensions, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
     <Reference Include="FXFW">
@@ -98,15 +128,31 @@
   <ItemGroup>
     <Compile Include="Classes\Managers\DataManager.cs" />
     <Compile Include="Classes\Managers\UserManager.cs" />
+    <Compile Include="Classes\Misc.cs" />
     <Compile Include="Datasource\dsData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsData.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasource\dsQry.cs">
+      <DependentUpon>dsQry.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasource\dsQry.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsQry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLALLDataUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLALLDataUC.Designer.cs">
+      <DependentUpon>TBLALLDataUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\ImportTBLALLDataUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\ImportTBLALLDataUC.designer.cs">
+      <DependentUpon>ImportTBLALLDataUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Code\TBLLabelUC.cs">
       <SubType>UserControl</SubType>
@@ -168,8 +214,26 @@
     <Compile Include="Forms\Permission\UsersFrm.designer.cs">
       <DependentUpon>UsersFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Print\PrintCard1UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Print\PrintCard1UC.Designer.cs">
+      <DependentUpon>PrintCard1UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XRep\XRepCard1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\XRep\XRepCard1.Designer.cs">
+      <DependentUpon>XRepCard1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Data\TBLALLDataUC.resx">
+      <DependentUpon>TBLALLDataUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\ImportTBLALLDataUC.resx">
+      <DependentUpon>ImportTBLALLDataUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Code\TBLLabelUC.resx">
       <DependentUpon>TBLLabelUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +263,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Permission\UsersFrm.resx">
       <DependentUpon>UsersFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Print\PrintCard1UC.resx">
+      <DependentUpon>PrintCard1UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XRep\XRepCard1.resx">
+      <DependentUpon>XRepCard1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -267,6 +337,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ECard.ico" />
+    <None Include="Resources\print_16x16.png" />
     <None Include="Resources\Login_Back.png" />
     <None Include="Resources\ECard.png" />
     <None Include="Resources\MSG_Warnning.png" />
@@ -274,6 +345,7 @@
     <None Include="Resources\MSG_Information.png" />
     <None Include="Resources\MSG_Error.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

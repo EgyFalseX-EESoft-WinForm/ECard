@@ -52,10 +52,6 @@
             this.LUEItems = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.BtnRefresh = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.TxtEditRealName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.TxtAddRealName = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlInsert)).BeginInit();
             this.groupControlInsert.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CEAddActive.Properties)).BeginInit();
@@ -71,8 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControlSelect)).BeginInit();
             this.groupControlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEItems.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtEditRealName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtAddRealName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlInsert
@@ -82,8 +76,6 @@
             this.groupControlInsert.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.groupControlInsert.Controls.Add(this.CEAddActive);
             this.groupControlInsert.Controls.Add(this.BtnAdd);
-            this.groupControlInsert.Controls.Add(this.TxtAddRealName);
-            this.groupControlInsert.Controls.Add(this.labelControl9);
             this.groupControlInsert.Controls.Add(this.TxtAddItem);
             this.groupControlInsert.Controls.Add(this.TxtAddPass2);
             this.groupControlInsert.Controls.Add(this.labelControl3);
@@ -179,8 +171,6 @@
             this.groupControlUpdate.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.groupControlUpdate.Controls.Add(this.CEEditActive);
             this.groupControlUpdate.Controls.Add(this.BtnUpdate);
-            this.groupControlUpdate.Controls.Add(this.TxtEditRealName);
-            this.groupControlUpdate.Controls.Add(this.labelControl8);
             this.groupControlUpdate.Controls.Add(this.TxtEditPass2);
             this.groupControlUpdate.Controls.Add(this.labelControl5);
             this.groupControlUpdate.Controls.Add(this.TxtEditPass1);
@@ -329,42 +319,6 @@
             this.BtnRefresh.TabIndex = 12;
             this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(223, 108);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(64, 13);
-            this.labelControl8.TabIndex = 0;
-            this.labelControl8.Text = "الاسم بالكامل";
-            // 
-            // TxtEditRealName
-            // 
-            this.TxtEditRealName.Location = new System.Drawing.Point(32, 105);
-            this.TxtEditRealName.Name = "TxtEditRealName";
-            this.TxtEditRealName.Properties.MaxLength = 25;
-            this.TxtEditRealName.Properties.NullValuePrompt = "اعد كتابة كلمة المرور";
-            this.TxtEditRealName.Size = new System.Drawing.Size(173, 20);
-            this.TxtEditRealName.TabIndex = 5;
-            this.TxtEditRealName.EditValueChanged += new System.EventHandler(this.TxtEditItem_EditValueChanged);
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Location = new System.Drawing.Point(223, 103);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(64, 13);
-            this.labelControl9.TabIndex = 0;
-            this.labelControl9.Text = "الاسم بالكامل";
-            // 
-            // TxtAddRealName
-            // 
-            this.TxtAddRealName.Location = new System.Drawing.Point(32, 100);
-            this.TxtAddRealName.Name = "TxtAddRealName";
-            this.TxtAddRealName.Properties.MaxLength = 25;
-            this.TxtAddRealName.Properties.NullValuePrompt = "اعد كتابة كلمة المرور";
-            this.TxtAddRealName.Size = new System.Drawing.Size(173, 20);
-            this.TxtAddRealName.TabIndex = 10;
-            this.TxtAddRealName.EditValueChanged += new System.EventHandler(this.TxtEditItem_EditValueChanged);
-            // 
             // UsersFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,8 +351,6 @@
             this.groupControlSelect.ResumeLayout(false);
             this.groupControlSelect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEItems.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtEditRealName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtAddRealName.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -428,9 +380,5 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit TxtEditPass1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit TxtEditRealName;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit TxtAddRealName;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
     }
 }

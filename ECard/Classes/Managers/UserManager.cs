@@ -10,6 +10,7 @@ namespace ECard.Classes.Managers
     {
         private readonly static Datasource.dsDataTableAdapters.UsersTableAdapter adpUser = new Datasource.dsDataTableAdapters.UsersTableAdapter();
         private readonly static Datasource.dsDataTableAdapters.RoleDetialTableAdapter adpRoleDetail = new Datasource.dsDataTableAdapters.RoleDetialTableAdapter();
+
         public static Datasource.dsData.UsersRow UserInfo { get; set; }
         public static Datasource.dsData.RoleDetialDataTable RoleDetial = new Datasource.dsData.RoleDetialDataTable();
         public static bool LoadUserInfo(string username, string password)

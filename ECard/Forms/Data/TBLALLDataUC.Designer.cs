@@ -1,6 +1,6 @@
-﻿namespace ECard.Forms.Code
+﻿namespace ECard.Forms.Data
 {
-    partial class TBLLabelUC
+    partial class TBLALLDataUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TBLLabelUC));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TBLALLDataUC));
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.mbSave = new DevExpress.XtraBars.BarButtonItem();
@@ -42,13 +42,25 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemLookUpEditGehaId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemGridLookUpEditGehaId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.cDGehaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsData = new ECard.Datasource.dsData();
-            this.colLabelOrder = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLabelText = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLabelDes = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colGeha = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGehaDes = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPersonNumerUonic = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltext1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltext2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltext3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltext4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltext5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltext6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltext7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltext8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltext9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltext10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colimgpath = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditallimgpath = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.XPSCSData = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.sessionData = new DevExpress.Xpo.Session(this.components);
@@ -61,9 +73,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditGehaId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditGehaId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDGehaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditallimgpath)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionData)).BeginInit();
@@ -174,7 +187,7 @@
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEditallimgpath,
-            this.repositoryItemLookUpEditGehaId});
+            this.repositoryItemGridLookUpEditGehaId});
             this.gridControlMain.Size = new System.Drawing.Size(787, 403);
             this.gridControlMain.TabIndex = 9;
             this.gridControlMain.UseEmbeddedNavigator = true;
@@ -184,10 +197,19 @@
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.colLabelOrder,
-            this.colLabelText,
-            this.colLabelDes});
+            this.gridColumn2,
+            this.colPersonNumerUonic,
+            this.coltext1,
+            this.coltext2,
+            this.coltext3,
+            this.coltext4,
+            this.coltext5,
+            this.coltext6,
+            this.coltext7,
+            this.coltext8,
+            this.coltext9,
+            this.coltext10,
+            this.colimgpath});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.NewItemRowText = "Click here to add a new customer";
@@ -202,33 +224,31 @@
             this.gridViewMain.OptionsView.ShowFooter = true;
             this.gridViewMain.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridViewMain_InitNewRow);
             // 
-            // gridColumn1
+            // gridColumn2
             // 
-            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.Caption = "الجهة";
-            this.gridColumn1.ColumnEdit = this.repositoryItemLookUpEditGehaId;
-            this.gridColumn1.FieldName = "GehaId!Key";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 144;
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.Caption = "الجهة";
+            this.gridColumn2.ColumnEdit = this.repositoryItemGridLookUpEditGehaId;
+            this.gridColumn2.FieldName = "GehaId";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
             // 
-            // repositoryItemLookUpEditGehaId
+            // repositoryItemGridLookUpEditGehaId
             // 
-            this.repositoryItemLookUpEditGehaId.AutoHeight = false;
-            this.repositoryItemLookUpEditGehaId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemGridLookUpEditGehaId.AutoHeight = false;
+            this.repositoryItemGridLookUpEditGehaId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEditGehaId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Geha", "Geha", 35, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.repositoryItemLookUpEditGehaId.DataSource = this.cDGehaBindingSource;
-            this.repositoryItemLookUpEditGehaId.DisplayMember = "Geha";
-            this.repositoryItemLookUpEditGehaId.Name = "repositoryItemLookUpEditGehaId";
-            this.repositoryItemLookUpEditGehaId.NullText = "";
-            this.repositoryItemLookUpEditGehaId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemLookUpEditGehaId.ValueMember = "GehaId";
+            this.repositoryItemGridLookUpEditGehaId.DataSource = this.cDGehaBindingSource;
+            this.repositoryItemGridLookUpEditGehaId.DisplayMember = "Geha";
+            this.repositoryItemGridLookUpEditGehaId.Name = "repositoryItemGridLookUpEditGehaId";
+            this.repositoryItemGridLookUpEditGehaId.NullText = "";
+            this.repositoryItemGridLookUpEditGehaId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemGridLookUpEditGehaId.ValueMember = "GehaId";
+            this.repositoryItemGridLookUpEditGehaId.View = this.repositoryItemGridLookUpEdit1View;
             // 
             // cDGehaBindingSource
             // 
@@ -240,44 +260,185 @@
             this.dsData.DataSetName = "dsData";
             this.dsData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // colLabelOrder
+            // repositoryItemGridLookUpEdit1View
             // 
-            this.colLabelOrder.AppearanceCell.Options.UseTextOptions = true;
-            this.colLabelOrder.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLabelOrder.AppearanceHeader.Options.UseTextOptions = true;
-            this.colLabelOrder.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLabelOrder.Caption = "الترتيب";
-            this.colLabelOrder.FieldName = "LabelOrder";
-            this.colLabelOrder.Name = "colLabelOrder";
-            this.colLabelOrder.Visible = true;
-            this.colLabelOrder.VisibleIndex = 1;
-            this.colLabelOrder.Width = 204;
+            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colGeha,
+            this.colGehaDes});
+            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
+            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // colLabelText
+            // colGeha
             // 
-            this.colLabelText.AppearanceCell.Options.UseTextOptions = true;
-            this.colLabelText.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLabelText.AppearanceHeader.Options.UseTextOptions = true;
-            this.colLabelText.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLabelText.Caption = "النص";
-            this.colLabelText.FieldName = "LabelText";
-            this.colLabelText.Name = "colLabelText";
-            this.colLabelText.Visible = true;
-            this.colLabelText.VisibleIndex = 2;
-            this.colLabelText.Width = 199;
+            this.colGeha.AppearanceCell.Options.UseTextOptions = true;
+            this.colGeha.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colGeha.AppearanceHeader.Options.UseTextOptions = true;
+            this.colGeha.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colGeha.Caption = "الاسم";
+            this.colGeha.FieldName = "Geha";
+            this.colGeha.Name = "colGeha";
+            this.colGeha.Visible = true;
+            this.colGeha.VisibleIndex = 0;
             // 
-            // colLabelDes
+            // colGehaDes
             // 
-            this.colLabelDes.AppearanceCell.Options.UseTextOptions = true;
-            this.colLabelDes.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLabelDes.AppearanceHeader.Options.UseTextOptions = true;
-            this.colLabelDes.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLabelDes.Caption = "الوصف";
-            this.colLabelDes.FieldName = "LabelDes";
-            this.colLabelDes.Name = "colLabelDes";
-            this.colLabelDes.Visible = true;
-            this.colLabelDes.VisibleIndex = 3;
-            this.colLabelDes.Width = 182;
+            this.colGehaDes.AppearanceCell.Options.UseTextOptions = true;
+            this.colGehaDes.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colGehaDes.AppearanceHeader.Options.UseTextOptions = true;
+            this.colGehaDes.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colGehaDes.Caption = "معلومات";
+            this.colGehaDes.FieldName = "GehaDes";
+            this.colGehaDes.Name = "colGehaDes";
+            this.colGehaDes.Visible = true;
+            this.colGehaDes.VisibleIndex = 1;
+            // 
+            // colPersonNumerUonic
+            // 
+            this.colPersonNumerUonic.AppearanceCell.Options.UseTextOptions = true;
+            this.colPersonNumerUonic.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPersonNumerUonic.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPersonNumerUonic.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPersonNumerUonic.Caption = "الرقم الخاص";
+            this.colPersonNumerUonic.FieldName = "PersonNumerUonic";
+            this.colPersonNumerUonic.Name = "colPersonNumerUonic";
+            this.colPersonNumerUonic.Visible = true;
+            this.colPersonNumerUonic.VisibleIndex = 1;
+            this.colPersonNumerUonic.Width = 76;
+            // 
+            // coltext1
+            // 
+            this.coltext1.AppearanceCell.Options.UseTextOptions = true;
+            this.coltext1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext1.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltext1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext1.Caption = "نص1";
+            this.coltext1.FieldName = "text1";
+            this.coltext1.Name = "coltext1";
+            this.coltext1.Visible = true;
+            this.coltext1.VisibleIndex = 2;
+            // 
+            // coltext2
+            // 
+            this.coltext2.AppearanceCell.Options.UseTextOptions = true;
+            this.coltext2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext2.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltext2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext2.Caption = "نص2";
+            this.coltext2.FieldName = "text2";
+            this.coltext2.Name = "coltext2";
+            this.coltext2.Visible = true;
+            this.coltext2.VisibleIndex = 3;
+            // 
+            // coltext3
+            // 
+            this.coltext3.AppearanceCell.Options.UseTextOptions = true;
+            this.coltext3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext3.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltext3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext3.Caption = "نص3";
+            this.coltext3.FieldName = "text3";
+            this.coltext3.Name = "coltext3";
+            this.coltext3.Visible = true;
+            this.coltext3.VisibleIndex = 4;
+            // 
+            // coltext4
+            // 
+            this.coltext4.AppearanceCell.Options.UseTextOptions = true;
+            this.coltext4.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext4.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltext4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext4.Caption = "نص4";
+            this.coltext4.FieldName = "text4";
+            this.coltext4.Name = "coltext4";
+            this.coltext4.Visible = true;
+            this.coltext4.VisibleIndex = 5;
+            // 
+            // coltext5
+            // 
+            this.coltext5.AppearanceCell.Options.UseTextOptions = true;
+            this.coltext5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext5.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltext5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext5.Caption = "نص5";
+            this.coltext5.FieldName = "text5";
+            this.coltext5.Name = "coltext5";
+            this.coltext5.Visible = true;
+            this.coltext5.VisibleIndex = 6;
+            // 
+            // coltext6
+            // 
+            this.coltext6.AppearanceCell.Options.UseTextOptions = true;
+            this.coltext6.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext6.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltext6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext6.Caption = "نص6";
+            this.coltext6.FieldName = "text6";
+            this.coltext6.Name = "coltext6";
+            this.coltext6.Visible = true;
+            this.coltext6.VisibleIndex = 7;
+            // 
+            // coltext7
+            // 
+            this.coltext7.AppearanceCell.Options.UseTextOptions = true;
+            this.coltext7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext7.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltext7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext7.Caption = "نص7";
+            this.coltext7.FieldName = "text7";
+            this.coltext7.Name = "coltext7";
+            this.coltext7.Visible = true;
+            this.coltext7.VisibleIndex = 8;
+            // 
+            // coltext8
+            // 
+            this.coltext8.AppearanceCell.Options.UseTextOptions = true;
+            this.coltext8.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext8.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltext8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext8.Caption = "نص8";
+            this.coltext8.FieldName = "text8";
+            this.coltext8.Name = "coltext8";
+            this.coltext8.Visible = true;
+            this.coltext8.VisibleIndex = 10;
+            // 
+            // coltext9
+            // 
+            this.coltext9.AppearanceCell.Options.UseTextOptions = true;
+            this.coltext9.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext9.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltext9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext9.Caption = "نص9";
+            this.coltext9.FieldName = "text9";
+            this.coltext9.Name = "coltext9";
+            this.coltext9.Visible = true;
+            this.coltext9.VisibleIndex = 11;
+            // 
+            // coltext10
+            // 
+            this.coltext10.AppearanceCell.Options.UseTextOptions = true;
+            this.coltext10.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext10.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltext10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext10.Caption = "نص10";
+            this.coltext10.FieldName = "text10";
+            this.coltext10.Name = "coltext10";
+            this.coltext10.Visible = true;
+            this.coltext10.VisibleIndex = 12;
+            // 
+            // colimgpath
+            // 
+            this.colimgpath.AppearanceCell.Options.UseTextOptions = true;
+            this.colimgpath.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colimgpath.AppearanceHeader.Options.UseTextOptions = true;
+            this.colimgpath.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colimgpath.Caption = "مسار الصورة";
+            this.colimgpath.FieldName = "imgpath";
+            this.colimgpath.Name = "colimgpath";
+            this.colimgpath.Visible = true;
+            this.colimgpath.VisibleIndex = 9;
+            this.colimgpath.Width = 77;
             // 
             // repositoryItemButtonEditallimgpath
             // 
@@ -294,7 +455,7 @@
             this.XPSCSData.AllowNew = true;
             this.XPSCSData.AllowRemove = true;
             this.XPSCSData.DeleteObjectOnRemove = true;
-            this.XPSCSData.ObjectType = typeof(ECard.Datasource.dsData.TBLLabelDataTable);
+            this.XPSCSData.ObjectType = typeof(ECard.Datasource.dsData.TBLALLDataDataTable);
             this.XPSCSData.Session = this.sessionData;
             // 
             // sessionData
@@ -316,7 +477,7 @@
             // 
             this.cDGehaTableAdapter.ClearBeforeFill = true;
             // 
-            // TBLLabelUC
+            // TBLALLDataUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -325,16 +486,17 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "TBLLabelUC";
+            this.Name = "TBLALLDataUC";
             this.Size = new System.Drawing.Size(787, 427);
             this.Load += new System.EventHandler(this.CDGehaFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditGehaId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditGehaId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDGehaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditallimgpath)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionData)).EndInit();
@@ -364,13 +526,25 @@
         private System.Windows.Forms.OpenFileDialog ofd;
         private DevExpress.Xpo.XPServerCollectionSource XPSCSData;
         private DevExpress.Xpo.Session sessionData;
-        private DevExpress.XtraGrid.Columns.GridColumn colLabelOrder;
-        private DevExpress.XtraGrid.Columns.GridColumn colLabelText;
-        private DevExpress.XtraGrid.Columns.GridColumn colLabelDes;
         private DevExpress.XtraSplashScreen.SplashScreenManager SSM;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditGehaId;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEditGehaId;
         private System.Windows.Forms.BindingSource cDGehaBindingSource;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn colGeha;
+        private DevExpress.XtraGrid.Columns.GridColumn colGehaDes;
+        private DevExpress.XtraGrid.Columns.GridColumn colPersonNumerUonic;
+        private DevExpress.XtraGrid.Columns.GridColumn coltext1;
+        private DevExpress.XtraGrid.Columns.GridColumn coltext2;
+        private DevExpress.XtraGrid.Columns.GridColumn coltext3;
+        private DevExpress.XtraGrid.Columns.GridColumn coltext4;
+        private DevExpress.XtraGrid.Columns.GridColumn coltext5;
+        private DevExpress.XtraGrid.Columns.GridColumn coltext6;
+        private DevExpress.XtraGrid.Columns.GridColumn coltext7;
+        private DevExpress.XtraGrid.Columns.GridColumn coltext8;
+        private DevExpress.XtraGrid.Columns.GridColumn coltext9;
+        private DevExpress.XtraGrid.Columns.GridColumn coltext10;
+        private DevExpress.XtraGrid.Columns.GridColumn colimgpath;
         private Datasource.dsDataTableAdapters.CDGehaTableAdapter cDGehaTableAdapter;
 
 

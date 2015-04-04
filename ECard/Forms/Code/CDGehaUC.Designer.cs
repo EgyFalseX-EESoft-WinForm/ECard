@@ -52,7 +52,7 @@
             this.dsData = new ECard.Datasource.dsData();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new ECard.Datasource.dsDataTableAdapters.UsersTableAdapter();
-            this.ofd = new System.Windows.Forms.OpenFileDialog();
+            this.fbd = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
@@ -319,10 +319,10 @@
         private System.Windows.Forms.BindingSource usersBindingSource;
         private Datasource.dsData dsData;
         private Datasource.dsDataTableAdapters.UsersTableAdapter usersTableAdapter;
-        private System.Windows.Forms.OpenFileDialog ofd;
         private DevExpress.Xpo.XPServerCollectionSource XPSCSData;
         private DevExpress.Xpo.Session sessionData;
         private DevExpress.XtraSplashScreen.SplashScreenManager SSM;
+        private System.Windows.Forms.FolderBrowserDialog fbd;
 
 
     }

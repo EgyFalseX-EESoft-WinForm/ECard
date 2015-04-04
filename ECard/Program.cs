@@ -10,6 +10,7 @@ namespace ECard
     static class Program
     {
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(Program));
+        public static string CardBackgroundPath = Application.StartupPath + "\\CardBackground.jpg";
 
         /// <summary>
         /// The main entry point for the application.

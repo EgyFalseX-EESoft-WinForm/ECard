@@ -77,13 +77,13 @@ namespace ECard.Forms.Code
         private void repositoryItemButtonEditallimgpath_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             ButtonEdit btn = (ButtonEdit)sender;
-            if (ofd.ShowDialog() == DialogResult.OK)
-                btn.EditValue = ofd.FileName;
+            if (fbd.ShowDialog() == DialogResult.OK)
+                btn.EditValue = fbd.SelectedPath;
         }
         private void gridViewMain_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
             DevExpress.Xpo.Metadata.XPDataTableObject obj = (DevExpress.Xpo.Metadata.XPDataTableObject)gridViewMain.GetRow(e.RowHandle);
-            obj.SetMemberValue("GehaId", -1);
+            //obj.SetMemberValue("GehaId", -1);
         }
         private void sessionData_BeforeCommitTransaction(object sender, DevExpress.Xpo.SessionManipulationEventArgs e)
         {
@@ -93,8 +93,8 @@ namespace ECard.Forms.Code
                 if (item.IsDeleted)
                     continue;
 
-                if (item.GetMemberValue("GehaId").ToString() == "-1")
-                    item.SetMemberValue("GehaId", Classes.Managers.DataManager.adpQry.GetNewId_CDGeha());
+                //if (item.GetMemberValue("GehaId").ToString() == "-1")
+                //    item.SetMemberValue("GehaId", Classes.Managers.DataManager.adpQry.GetNewId_CDGeha());
                 item.SetMemberValue("userin", Classes.Managers.UserManager.UserInfo.UserID);
                 item.SetMemberValue("datein", Classes.Managers.DataManager.GetServerDatetime);
             }
