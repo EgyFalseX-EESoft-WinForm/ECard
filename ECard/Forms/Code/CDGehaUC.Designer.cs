@@ -53,6 +53,7 @@
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new ECard.Datasource.dsDataTableAdapters.UsersTableAdapter();
             this.fbd = new System.Windows.Forms.FolderBrowserDialog();
+            this.colTextColor = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
@@ -195,7 +196,8 @@
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colGeha,
             this.colGehaDes,
-            this.colallimgpath});
+            this.colallimgpath,
+            this.colTextColor});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.NewItemRowText = "Click here to add a new customer";
@@ -273,6 +275,18 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // colTextColor
+            // 
+            this.colTextColor.AppearanceCell.Options.UseTextOptions = true;
+            this.colTextColor.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTextColor.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTextColor.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTextColor.Caption = "اللون";
+            this.colTextColor.FieldName = "TextColor";
+            this.colTextColor.Name = "colTextColor";
+            this.colTextColor.Visible = true;
+            this.colTextColor.VisibleIndex = 3;
+            // 
             // CDGehaUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,6 +337,7 @@
         private DevExpress.Xpo.Session sessionData;
         private DevExpress.XtraSplashScreen.SplashScreenManager SSM;
         private System.Windows.Forms.FolderBrowserDialog fbd;
+        private DevExpress.XtraGrid.Columns.GridColumn colTextColor;
 
 
     }

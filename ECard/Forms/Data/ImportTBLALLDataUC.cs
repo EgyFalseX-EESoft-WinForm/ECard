@@ -27,18 +27,20 @@ namespace ECard.Forms.Data
             get
             {
                 return string.Format(@"Required field for import{0}
-PersonNumerUonic	
-text1	
-text2	
-text3	
-text4	
-text5	
-text6	
-text7	
-text8	
-text9	
-text10	
-imgpath	
+No	
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+img
 _______________________________________________
 ", Environment.NewLine);
             }
@@ -142,19 +144,24 @@ _______________________________________________
                 Datasource.dsData.TBLALLDataRow SqlRow = dsData.TBLALLData.NewTBLALLDataRow();
 
                 SqlRow.GehaId = Geha;
-                if (row["PersonNumerUonic"].ToString() != string.Empty)
-                    SqlRow.PersonNumerUonic = Convert.ToInt32(row["PersonNumerUonic"]);
-                SqlRow.text1 = row["text1"].ToString();
-                SqlRow.text2 = row["text2"].ToString();
-                SqlRow.text3 = row["text3"].ToString();
-                SqlRow.text4 = row["text4"].ToString();
-                SqlRow.text5 = row["text5"].ToString();
-                SqlRow.text6 = row["text6"].ToString();
-                SqlRow.text7 = row["text7"].ToString();
-                SqlRow.text8 = row["text8"].ToString();
-                SqlRow.text9 = row["text9"].ToString();
-                SqlRow.text10 = row["text10"].ToString();
-                SqlRow.imgpath = row["imgpath"].ToString();
+                if (row["No"].ToString() != string.Empty)
+                    SqlRow.PersonNumerUonic = Convert.ToInt32(row["No"]);
+                SqlRow.text1 = row["1"].ToString();
+                SqlRow.text2 = row["2"].ToString();
+                SqlRow.text3 = row["3"].ToString();
+                SqlRow.text4 = row["4"].ToString();
+                DateTime dt;
+                if (DateTime.TryParse(row["5"].ToString(), out dt))
+                    SqlRow.text5 = dt;    
+                if (DateTime.TryParse(row["6"].ToString(), out dt))
+                    SqlRow.text6 = dt;
+                SqlRow.text7 = row["7"].ToString();
+                SqlRow.text8 = row["8"].ToString();
+                SqlRow.text9 = row["9"].ToString();
+                SqlRow.text10 = row["10"].ToString();
+                SqlRow.text11 = row["11"].ToString();
+                SqlRow.text12 = row["12"].ToString();
+                SqlRow.imgpath = row["img"].ToString();
                 SqlRow.datein = DateIn;
                 SqlRow.userin = UserManager.UserInfo.UserID;
                 SqlRow.DataId = 1;

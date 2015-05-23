@@ -210,7 +210,7 @@
             this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn1.Caption = "الجهة";
             this.gridColumn1.ColumnEdit = this.repositoryItemLookUpEditGehaId;
-            this.gridColumn1.FieldName = "GehaId!Key";
+            this.gridColumn1.FieldName = "GehaId";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;

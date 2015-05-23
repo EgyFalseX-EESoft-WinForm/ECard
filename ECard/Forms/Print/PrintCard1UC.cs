@@ -25,17 +25,19 @@ namespace ECard.Forms.Print
                 return;
             }
             
+
+
             Datasource.dsQry.XRepCard1DataTable PrintTbl = new Datasource.dsQry.XRepCard1DataTable();
             for (int i = 0; i < gridViewMain.SelectedRowsCount; i++)
             {
                 PrintTbl.Rows.Add(gridViewMain.GetDataRow(gridViewMain.GetSelectedRows()[i]).ItemArray);
             }
             //Saving Printing Order
-            if (!Classes.Managers.DataManager.SavePrintOrder(PrintTbl))
-            {
-                MsgDlg.Show("لم يتم الحفظ. لن نتمكن من الطباعة", MsgDlg.MessageType.Error);
-                return;
-            }
+            //if (!Classes.Managers.DataManager.SavePrintOrder(PrintTbl))
+            //{
+            //    MsgDlg.Show("لم يتم الحفظ. لن نتمكن من الطباعة", MsgDlg.MessageType.Error);
+            //    return;
+            //}
             //Show Print Form
             ECard.Forms.XRep.XRepCard1 FrmRep = new ECard.Forms.XRep.XRepCard1(PrintTbl);
             ECard.Classes.Misc.ShowPrintPreview(FrmRep);

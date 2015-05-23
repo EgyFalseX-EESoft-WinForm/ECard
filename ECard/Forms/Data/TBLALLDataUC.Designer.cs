@@ -41,6 +41,8 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
+            this.XPSCSData = new DevExpress.Xpo.XPServerCollectionSource(this.components);
+            this.sessionData = new DevExpress.Xpo.Session(this.components);
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditGehaId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
@@ -60,10 +62,10 @@
             this.coltext8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltext9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltext10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltext11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltext12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colimgpath = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditallimgpath = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.XPSCSData = new DevExpress.Xpo.XPServerCollectionSource(this.components);
-            this.sessionData = new DevExpress.Xpo.Session(this.components);
             this.SSM = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ECard.Forms.Main.WaitWindowFrm), true, true, DevExpress.XtraSplashScreen.ParentType.UserControl);
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new ECard.Datasource.dsDataTableAdapters.UsersTableAdapter();
@@ -72,14 +74,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditGehaId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDGehaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditallimgpath)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,6 +196,21 @@
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
             // 
+            // XPSCSData
+            // 
+            this.XPSCSData.AllowEdit = true;
+            this.XPSCSData.AllowNew = true;
+            this.XPSCSData.AllowRemove = true;
+            this.XPSCSData.DeleteObjectOnRemove = true;
+            this.XPSCSData.ObjectType = typeof(ECard.Datasource.dsData.TBLALLDataDataTable);
+            this.XPSCSData.Session = this.sessionData;
+            // 
+            // sessionData
+            // 
+            this.sessionData.IsObjectModifiedOnNonPersistentPropertyChange = null;
+            this.sessionData.TrackPropertiesModifications = false;
+            this.sessionData.BeforeCommitTransaction += new DevExpress.Xpo.SessionManipulationEventHandler(this.sessionData_BeforeCommitTransaction);
+            // 
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -209,6 +226,8 @@
             this.coltext8,
             this.coltext9,
             this.coltext10,
+            this.coltext11,
+            this.coltext12,
             this.colimgpath});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
@@ -401,7 +420,7 @@
             this.coltext8.FieldName = "text8";
             this.coltext8.Name = "coltext8";
             this.coltext8.Visible = true;
-            this.coltext8.VisibleIndex = 10;
+            this.coltext8.VisibleIndex = 9;
             // 
             // coltext9
             // 
@@ -413,7 +432,7 @@
             this.coltext9.FieldName = "text9";
             this.coltext9.Name = "coltext9";
             this.coltext9.Visible = true;
-            this.coltext9.VisibleIndex = 11;
+            this.coltext9.VisibleIndex = 10;
             // 
             // coltext10
             // 
@@ -425,7 +444,31 @@
             this.coltext10.FieldName = "text10";
             this.coltext10.Name = "coltext10";
             this.coltext10.Visible = true;
-            this.coltext10.VisibleIndex = 12;
+            this.coltext10.VisibleIndex = 11;
+            // 
+            // coltext11
+            // 
+            this.coltext11.AppearanceCell.Options.UseTextOptions = true;
+            this.coltext11.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext11.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltext11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext11.Caption = "نص11";
+            this.coltext11.FieldName = "text11";
+            this.coltext11.Name = "coltext11";
+            this.coltext11.Visible = true;
+            this.coltext11.VisibleIndex = 12;
+            // 
+            // coltext12
+            // 
+            this.coltext12.AppearanceCell.Options.UseTextOptions = true;
+            this.coltext12.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext12.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltext12.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext12.Caption = "نص12";
+            this.coltext12.FieldName = "text12";
+            this.coltext12.Name = "coltext12";
+            this.coltext12.Visible = true;
+            this.coltext12.VisibleIndex = 13;
             // 
             // colimgpath
             // 
@@ -437,7 +480,7 @@
             this.colimgpath.FieldName = "imgpath";
             this.colimgpath.Name = "colimgpath";
             this.colimgpath.Visible = true;
-            this.colimgpath.VisibleIndex = 9;
+            this.colimgpath.VisibleIndex = 14;
             this.colimgpath.Width = 77;
             // 
             // repositoryItemButtonEditallimgpath
@@ -448,21 +491,6 @@
             this.repositoryItemButtonEditallimgpath.Name = "repositoryItemButtonEditallimgpath";
             this.repositoryItemButtonEditallimgpath.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.repositoryItemButtonEditallimgpath.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditallimgpath_ButtonClick);
-            // 
-            // XPSCSData
-            // 
-            this.XPSCSData.AllowEdit = true;
-            this.XPSCSData.AllowNew = true;
-            this.XPSCSData.AllowRemove = true;
-            this.XPSCSData.DeleteObjectOnRemove = true;
-            this.XPSCSData.ObjectType = typeof(ECard.Datasource.dsData.TBLALLDataDataTable);
-            this.XPSCSData.Session = this.sessionData;
-            // 
-            // sessionData
-            // 
-            this.sessionData.IsObjectModifiedOnNonPersistentPropertyChange = null;
-            this.sessionData.TrackPropertiesModifications = false;
-            this.sessionData.BeforeCommitTransaction += new DevExpress.Xpo.SessionManipulationEventHandler(this.sessionData_BeforeCommitTransaction);
             // 
             // usersBindingSource
             // 
@@ -492,14 +520,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditGehaId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDGehaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditallimgpath)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -546,6 +574,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn coltext10;
         private DevExpress.XtraGrid.Columns.GridColumn colimgpath;
         private Datasource.dsDataTableAdapters.CDGehaTableAdapter cDGehaTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn coltext11;
+        private DevExpress.XtraGrid.Columns.GridColumn coltext12;
 
 
     }

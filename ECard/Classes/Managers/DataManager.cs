@@ -62,6 +62,7 @@ namespace ECard.Classes.Managers
                         {
                             if (item.Name != string.Empty)
                             {
+                                
                                 adp.InsertBaseRole(1, item.Name, true, true, true, true);
                             }
                         }

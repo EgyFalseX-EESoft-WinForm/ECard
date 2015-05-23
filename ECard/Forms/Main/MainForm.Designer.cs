@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             this.ribbonControlMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
             this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
@@ -38,13 +38,14 @@
             this.imageCollection16 = new DevExpress.Utils.ImageCollection(this.components);
             this.mbCDGeha = new DevExpress.XtraBars.BarButtonItem();
             this.mbTBLLabel = new DevExpress.XtraBars.BarButtonItem();
-            this.mbImportTBLALLDataUC = new DevExpress.XtraBars.BarButtonItem();
-            this.mbTBLALLDataUC = new DevExpress.XtraBars.BarButtonItem();
-            this.mbPrintCard1UC = new DevExpress.XtraBars.BarButtonItem();
+            this.mbImportTBLALLData = new DevExpress.XtraBars.BarButtonItem();
+            this.mbTBLALLData = new DevExpress.XtraBars.BarButtonItem();
+            this.mbPrintCard1 = new DevExpress.XtraBars.BarButtonItem();
             this.mbUsers = new DevExpress.XtraBars.BarButtonItem();
             this.mbRoles = new DevExpress.XtraBars.BarButtonItem();
             this.mbRoleDetail = new DevExpress.XtraBars.BarButtonItem();
             this.mbUserRoles = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.imageCollection32 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPageCode = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupCode = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -55,7 +56,6 @@
             this.ribbonPageQry = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPagePrint = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupPrint = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             this.backstageViewControl1.SuspendLayout();
@@ -72,9 +72,9 @@
             this.ribbonControlMain.ExpandCollapseItem,
             this.mbCDGeha,
             this.mbTBLLabel,
-            this.mbImportTBLALLDataUC,
-            this.mbTBLALLDataUC,
-            this.mbPrintCard1UC,
+            this.mbImportTBLALLData,
+            this.mbTBLALLData,
+            this.mbPrintCard1,
             this.mbUsers,
             this.mbRoles,
             this.mbRoleDetail,
@@ -158,35 +158,35 @@
             this.mbTBLLabel.Name = "mbTBLLabel";
             this.mbTBLLabel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbTBLLabel_ItemClick);
             // 
-            // mbImportTBLALLDataUC
+            // mbImportTBLALLData
             // 
-            this.mbImportTBLALLDataUC.Caption = "استيراد بيانات الكروت";
-            this.mbImportTBLALLDataUC.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.mbImportTBLALLDataUC.Id = 3;
-            this.mbImportTBLALLDataUC.ImageIndex = 1;
-            this.mbImportTBLALLDataUC.LargeImageIndex = 1;
-            this.mbImportTBLALLDataUC.Name = "mbImportTBLALLDataUC";
-            this.mbImportTBLALLDataUC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbTBLALLData_ItemClick);
+            this.mbImportTBLALLData.Caption = "استيراد بيانات الكروت";
+            this.mbImportTBLALLData.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.mbImportTBLALLData.Id = 3;
+            this.mbImportTBLALLData.ImageIndex = 1;
+            this.mbImportTBLALLData.LargeImageIndex = 1;
+            this.mbImportTBLALLData.Name = "mbImportTBLALLData";
+            this.mbImportTBLALLData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbTBLALLData_ItemClick);
             // 
-            // mbTBLALLDataUC
+            // mbTBLALLData
             // 
-            this.mbTBLALLDataUC.Caption = "بيانات الكروت";
-            this.mbTBLALLDataUC.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.mbTBLALLDataUC.Id = 4;
-            this.mbTBLALLDataUC.ImageIndex = 1;
-            this.mbTBLALLDataUC.LargeImageIndex = 1;
-            this.mbTBLALLDataUC.Name = "mbTBLALLDataUC";
-            this.mbTBLALLDataUC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbTBLALLDataUC_ItemClick);
+            this.mbTBLALLData.Caption = "بيانات الكروت";
+            this.mbTBLALLData.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.mbTBLALLData.Id = 4;
+            this.mbTBLALLData.ImageIndex = 1;
+            this.mbTBLALLData.LargeImageIndex = 1;
+            this.mbTBLALLData.Name = "mbTBLALLData";
+            this.mbTBLALLData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbTBLALLDataUC_ItemClick);
             // 
-            // mbPrintCard1UC
+            // mbPrintCard1
             // 
-            this.mbPrintCard1UC.Caption = "طباعة الكارت 1";
-            this.mbPrintCard1UC.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.mbPrintCard1UC.Id = 5;
-            this.mbPrintCard1UC.ImageIndex = 2;
-            this.mbPrintCard1UC.LargeImageIndex = 2;
-            this.mbPrintCard1UC.Name = "mbPrintCard1UC";
-            this.mbPrintCard1UC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbPrintCard1UC_ItemClick);
+            this.mbPrintCard1.Caption = "طباعة الكارت 1";
+            this.mbPrintCard1.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.mbPrintCard1.Id = 5;
+            this.mbPrintCard1.ImageIndex = 2;
+            this.mbPrintCard1.LargeImageIndex = 2;
+            this.mbPrintCard1.Name = "mbPrintCard1";
+            this.mbPrintCard1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbPrintCard1UC_ItemClick);
             // 
             // mbUsers
             // 
@@ -227,6 +227,18 @@
             this.mbUserRoles.LargeImageIndex = 6;
             this.mbUserRoles.Name = "mbUserRoles";
             this.mbUserRoles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbUserRoles_ItemClick);
+            // 
+            // ribbonGalleryBarItem1
+            // 
+            this.ribbonGalleryBarItem1.Caption = "InplaceGallery1";
+            // 
+            // 
+            // 
+            galleryItemGroup1.Caption = "Group1";
+            this.ribbonGalleryBarItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
+            galleryItemGroup1});
+            this.ribbonGalleryBarItem1.Id = 1;
+            this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
             // 
             // imageCollection32
             // 
@@ -269,8 +281,8 @@
             // ribbonPageGroupData
             // 
             this.ribbonPageGroupData.ItemLinks.Add(this.mbTBLLabel);
-            this.ribbonPageGroupData.ItemLinks.Add(this.mbImportTBLALLDataUC);
-            this.ribbonPageGroupData.ItemLinks.Add(this.mbTBLALLDataUC);
+            this.ribbonPageGroupData.ItemLinks.Add(this.mbImportTBLALLData);
+            this.ribbonPageGroupData.ItemLinks.Add(this.mbTBLALLData);
             this.ribbonPageGroupData.Name = "ribbonPageGroupData";
             this.ribbonPageGroupData.Text = "ribbonPageGroup2";
             // 
@@ -304,21 +316,9 @@
             // 
             // ribbonPageGroupPrint
             // 
-            this.ribbonPageGroupPrint.ItemLinks.Add(this.mbPrintCard1UC);
+            this.ribbonPageGroupPrint.ItemLinks.Add(this.mbPrintCard1);
             this.ribbonPageGroupPrint.Name = "ribbonPageGroupPrint";
             this.ribbonPageGroupPrint.Text = "طباعة الكروت";
-            // 
-            // ribbonGalleryBarItem1
-            // 
-            this.ribbonGalleryBarItem1.Caption = "InplaceGallery1";
-            // 
-            // 
-            // 
-            galleryItemGroup2.Caption = "Group1";
-            this.ribbonGalleryBarItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup2});
-            this.ribbonGalleryBarItem1.Id = 1;
-            this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
             // 
             // MainForm
             // 
@@ -360,10 +360,10 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupData;
         private DevExpress.Utils.ImageCollection imageCollection16;
         private DevExpress.Utils.ImageCollection imageCollection32;
-        private DevExpress.XtraBars.BarButtonItem mbImportTBLALLDataUC;
-        private DevExpress.XtraBars.BarButtonItem mbTBLALLDataUC;
+        private DevExpress.XtraBars.BarButtonItem mbImportTBLALLData;
+        private DevExpress.XtraBars.BarButtonItem mbTBLALLData;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPagePrint;
-        private DevExpress.XtraBars.BarButtonItem mbPrintCard1UC;
+        private DevExpress.XtraBars.BarButtonItem mbPrintCard1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupPrint;
         private DevExpress.XtraBars.BarButtonItem mbUsers;
         private DevExpress.XtraBars.BarButtonItem mbRoles;

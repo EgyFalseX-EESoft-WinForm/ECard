@@ -24,13 +24,13 @@ namespace ECard.Datasource {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class dsQry : global::System.Data.DataSet {
         
-        private XRepCard1DataTable tableXRepCard1;
-        
         private lueXRepCard1DataTable tablelueXRepCard1;
         
         private GridXRepCard1DataTable tableGridXRepCard1;
         
-        private global::System.Data.DataRelation relationFK_TBLALLData_CDGeha;
+        private TblControlDataTable tableTblControl;
+        
+        private XRepCard1DataTable tableXRepCard1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -60,14 +60,17 @@ namespace ECard.Datasource {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["XRepCard1"] != null)) {
-                    base.Tables.Add(new XRepCard1DataTable(ds.Tables["XRepCard1"]));
-                }
                 if ((ds.Tables["lueXRepCard1"] != null)) {
                     base.Tables.Add(new lueXRepCard1DataTable(ds.Tables["lueXRepCard1"]));
                 }
                 if ((ds.Tables["GridXRepCard1"] != null)) {
                     base.Tables.Add(new GridXRepCard1DataTable(ds.Tables["GridXRepCard1"]));
+                }
+                if ((ds.Tables["TblControl"] != null)) {
+                    base.Tables.Add(new TblControlDataTable(ds.Tables["TblControl"]));
+                }
+                if ((ds.Tables["XRepCard1"] != null)) {
+                    base.Tables.Add(new XRepCard1DataTable(ds.Tables["XRepCard1"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -91,16 +94,6 @@ namespace ECard.Datasource {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public XRepCard1DataTable XRepCard1 {
-            get {
-                return this.tableXRepCard1;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public lueXRepCard1DataTable lueXRepCard1 {
             get {
                 return this.tablelueXRepCard1;
@@ -114,6 +107,26 @@ namespace ECard.Datasource {
         public GridXRepCard1DataTable GridXRepCard1 {
             get {
                 return this.tableGridXRepCard1;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TblControlDataTable TblControl {
+            get {
+                return this.tableTblControl;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public XRepCard1DataTable XRepCard1 {
+            get {
+                return this.tableXRepCard1;
             }
         }
         
@@ -184,14 +197,17 @@ namespace ECard.Datasource {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["XRepCard1"] != null)) {
-                    base.Tables.Add(new XRepCard1DataTable(ds.Tables["XRepCard1"]));
-                }
                 if ((ds.Tables["lueXRepCard1"] != null)) {
                     base.Tables.Add(new lueXRepCard1DataTable(ds.Tables["lueXRepCard1"]));
                 }
                 if ((ds.Tables["GridXRepCard1"] != null)) {
                     base.Tables.Add(new GridXRepCard1DataTable(ds.Tables["GridXRepCard1"]));
+                }
+                if ((ds.Tables["TblControl"] != null)) {
+                    base.Tables.Add(new TblControlDataTable(ds.Tables["TblControl"]));
+                }
+                if ((ds.Tables["XRepCard1"] != null)) {
+                    base.Tables.Add(new XRepCard1DataTable(ds.Tables["XRepCard1"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -226,12 +242,6 @@ namespace ECard.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableXRepCard1 = ((XRepCard1DataTable)(base.Tables["XRepCard1"]));
-            if ((initTable == true)) {
-                if ((this.tableXRepCard1 != null)) {
-                    this.tableXRepCard1.InitVars();
-                }
-            }
             this.tablelueXRepCard1 = ((lueXRepCard1DataTable)(base.Tables["lueXRepCard1"]));
             if ((initTable == true)) {
                 if ((this.tablelueXRepCard1 != null)) {
@@ -244,7 +254,18 @@ namespace ECard.Datasource {
                     this.tableGridXRepCard1.InitVars();
                 }
             }
-            this.relationFK_TBLALLData_CDGeha = this.Relations["FK_TBLALLData_CDGeha"];
+            this.tableTblControl = ((TblControlDataTable)(base.Tables["TblControl"]));
+            if ((initTable == true)) {
+                if ((this.tableTblControl != null)) {
+                    this.tableTblControl.InitVars();
+                }
+            }
+            this.tableXRepCard1 = ((XRepCard1DataTable)(base.Tables["XRepCard1"]));
+            if ((initTable == true)) {
+                if ((this.tableXRepCard1 != null)) {
+                    this.tableXRepCard1.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -255,22 +276,14 @@ namespace ECard.Datasource {
             this.Namespace = "http://tempuri.org/dsQry.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableXRepCard1 = new XRepCard1DataTable();
-            base.Tables.Add(this.tableXRepCard1);
             this.tablelueXRepCard1 = new lueXRepCard1DataTable();
             base.Tables.Add(this.tablelueXRepCard1);
             this.tableGridXRepCard1 = new GridXRepCard1DataTable();
             base.Tables.Add(this.tableGridXRepCard1);
-            this.relationFK_TBLALLData_CDGeha = new global::System.Data.DataRelation("FK_TBLALLData_CDGeha", new global::System.Data.DataColumn[] {
-                        this.tablelueXRepCard1.GehaIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableXRepCard1.GehaIdColumn}, false);
-            this.Relations.Add(this.relationFK_TBLALLData_CDGeha);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeXRepCard1() {
-            return false;
+            this.tableTblControl = new TblControlDataTable();
+            base.Tables.Add(this.tableTblControl);
+            this.tableXRepCard1 = new XRepCard1DataTable();
+            base.Tables.Add(this.tableXRepCard1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -282,6 +295,18 @@ namespace ECard.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeGridXRepCard1() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeTblControl() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeXRepCard1() {
             return false;
         }
         
@@ -341,456 +366,16 @@ namespace ECard.Datasource {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void XRepCard1RowChangeEventHandler(object sender, XRepCard1RowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void lueXRepCard1RowChangeEventHandler(object sender, lueXRepCard1RowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void GridXRepCard1RowChangeEventHandler(object sender, GridXRepCard1RowChangeEvent e);
         
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class XRepCard1DataTable : global::System.Data.TypedTableBase<XRepCard1Row> {
-            
-            private global::System.Data.DataColumn columnGehaId;
-            
-            private global::System.Data.DataColumn columntext1;
-            
-            private global::System.Data.DataColumn columntext2;
-            
-            private global::System.Data.DataColumn columntext3;
-            
-            private global::System.Data.DataColumn columntext4;
-            
-            private global::System.Data.DataColumn columntext5;
-            
-            private global::System.Data.DataColumn columnimgpath;
-            
-            private global::System.Data.DataColumn columntext1lbl;
-            
-            private global::System.Data.DataColumn columntext2lbl;
-            
-            private global::System.Data.DataColumn columntext3lbl;
-            
-            private global::System.Data.DataColumn columntext4lbl;
-            
-            private global::System.Data.DataColumn columntext5lbl;
-            
-            private global::System.Data.DataColumn columnDataId;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public XRepCard1DataTable() {
-                this.TableName = "XRepCard1";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal XRepCard1DataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected XRepCard1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn GehaIdColumn {
-                get {
-                    return this.columnGehaId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn text1Column {
-                get {
-                    return this.columntext1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn text2Column {
-                get {
-                    return this.columntext2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn text3Column {
-                get {
-                    return this.columntext3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn text4Column {
-                get {
-                    return this.columntext4;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn text5Column {
-                get {
-                    return this.columntext5;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn imgpathColumn {
-                get {
-                    return this.columnimgpath;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn text1lblColumn {
-                get {
-                    return this.columntext1lbl;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn text2lblColumn {
-                get {
-                    return this.columntext2lbl;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn text3lblColumn {
-                get {
-                    return this.columntext3lbl;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn text4lblColumn {
-                get {
-                    return this.columntext4lbl;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn text5lblColumn {
-                get {
-                    return this.columntext5lbl;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DataIdColumn {
-                get {
-                    return this.columnDataId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public XRepCard1Row this[int index] {
-                get {
-                    return ((XRepCard1Row)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event XRepCard1RowChangeEventHandler XRepCard1RowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event XRepCard1RowChangeEventHandler XRepCard1RowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event XRepCard1RowChangeEventHandler XRepCard1RowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event XRepCard1RowChangeEventHandler XRepCard1RowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddXRepCard1Row(XRepCard1Row row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public XRepCard1Row AddXRepCard1Row(lueXRepCard1Row parentlueXRepCard1RowByFK_TBLALLData_CDGeha, string text1, string text2, string text3, string text4, string text5, string imgpath, string text1lbl, string text2lbl, string text3lbl, string text4lbl, string text5lbl) {
-                XRepCard1Row rowXRepCard1Row = ((XRepCard1Row)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        text1,
-                        text2,
-                        text3,
-                        text4,
-                        text5,
-                        imgpath,
-                        text1lbl,
-                        text2lbl,
-                        text3lbl,
-                        text4lbl,
-                        text5lbl,
-                        null};
-                if ((parentlueXRepCard1RowByFK_TBLALLData_CDGeha != null)) {
-                    columnValuesArray[0] = parentlueXRepCard1RowByFK_TBLALLData_CDGeha[0];
-                }
-                rowXRepCard1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowXRepCard1Row);
-                return rowXRepCard1Row;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                XRepCard1DataTable cln = ((XRepCard1DataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new XRepCard1DataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnGehaId = base.Columns["GehaId"];
-                this.columntext1 = base.Columns["text1"];
-                this.columntext2 = base.Columns["text2"];
-                this.columntext3 = base.Columns["text3"];
-                this.columntext4 = base.Columns["text4"];
-                this.columntext5 = base.Columns["text5"];
-                this.columnimgpath = base.Columns["imgpath"];
-                this.columntext1lbl = base.Columns["text1lbl"];
-                this.columntext2lbl = base.Columns["text2lbl"];
-                this.columntext3lbl = base.Columns["text3lbl"];
-                this.columntext4lbl = base.Columns["text4lbl"];
-                this.columntext5lbl = base.Columns["text5lbl"];
-                this.columnDataId = base.Columns["DataId"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnGehaId = new global::System.Data.DataColumn("GehaId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGehaId);
-                this.columntext1 = new global::System.Data.DataColumn("text1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntext1);
-                this.columntext2 = new global::System.Data.DataColumn("text2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntext2);
-                this.columntext3 = new global::System.Data.DataColumn("text3", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntext3);
-                this.columntext4 = new global::System.Data.DataColumn("text4", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntext4);
-                this.columntext5 = new global::System.Data.DataColumn("text5", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntext5);
-                this.columnimgpath = new global::System.Data.DataColumn("imgpath", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnimgpath);
-                this.columntext1lbl = new global::System.Data.DataColumn("text1lbl", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntext1lbl);
-                this.columntext2lbl = new global::System.Data.DataColumn("text2lbl", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntext2lbl);
-                this.columntext3lbl = new global::System.Data.DataColumn("text3lbl", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntext3lbl);
-                this.columntext4lbl = new global::System.Data.DataColumn("text4lbl", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntext4lbl);
-                this.columntext5lbl = new global::System.Data.DataColumn("text5lbl", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntext5lbl);
-                this.columnDataId = new global::System.Data.DataColumn("DataId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDataId);
-                this.columnGehaId.AllowDBNull = false;
-                this.columntext1.AllowDBNull = false;
-                this.columntext1.MaxLength = 150;
-                this.columntext2.AllowDBNull = false;
-                this.columntext2.MaxLength = 150;
-                this.columntext3.AllowDBNull = false;
-                this.columntext3.MaxLength = 150;
-                this.columntext4.MaxLength = 150;
-                this.columntext5.MaxLength = 150;
-                this.columnimgpath.MaxLength = 150;
-                this.columntext1lbl.ReadOnly = true;
-                this.columntext1lbl.MaxLength = 50;
-                this.columntext2lbl.ReadOnly = true;
-                this.columntext2lbl.MaxLength = 50;
-                this.columntext3lbl.ReadOnly = true;
-                this.columntext3lbl.MaxLength = 50;
-                this.columntext4lbl.ReadOnly = true;
-                this.columntext4lbl.MaxLength = 50;
-                this.columntext5lbl.ReadOnly = true;
-                this.columntext5lbl.MaxLength = 50;
-                this.columnDataId.AutoIncrement = true;
-                this.columnDataId.AutoIncrementSeed = -1;
-                this.columnDataId.AutoIncrementStep = -1;
-                this.columnDataId.AllowDBNull = false;
-                this.columnDataId.ReadOnly = true;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public XRepCard1Row NewXRepCard1Row() {
-                return ((XRepCard1Row)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new XRepCard1Row(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(XRepCard1Row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.XRepCard1RowChanged != null)) {
-                    this.XRepCard1RowChanged(this, new XRepCard1RowChangeEvent(((XRepCard1Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.XRepCard1RowChanging != null)) {
-                    this.XRepCard1RowChanging(this, new XRepCard1RowChangeEvent(((XRepCard1Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.XRepCard1RowDeleted != null)) {
-                    this.XRepCard1RowDeleted(this, new XRepCard1RowChangeEvent(((XRepCard1Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.XRepCard1RowDeleting != null)) {
-                    this.XRepCard1RowDeleting(this, new XRepCard1RowChangeEvent(((XRepCard1Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveXRepCard1Row(XRepCard1Row row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsQry ds = new dsQry();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "XRepCard1DataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void TblControlRowChangeEventHandler(object sender, TblControlRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void XRepCard1RowChangeEventHandler(object sender, XRepCard1RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1443,307 +1028,1041 @@ namespace ECard.Datasource {
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
+        ///Represents the strongly named DataTable class.
         ///</summary>
-        public partial class XRepCard1Row : global::System.Data.DataRow {
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TblControlDataTable : global::System.Data.TypedTableBase<TblControlRow> {
             
-            private XRepCard1DataTable tableXRepCard1;
+            private global::System.Data.DataColumn columnGehaId;
+            
+            private global::System.Data.DataColumn columnctr1;
+            
+            private global::System.Data.DataColumn columnctr2;
+            
+            private global::System.Data.DataColumn columnctr3;
+            
+            private global::System.Data.DataColumn columnctr4;
+            
+            private global::System.Data.DataColumn columnctr5;
+            
+            private global::System.Data.DataColumn columnctr6;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal XRepCard1Row(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableXRepCard1 = ((XRepCard1DataTable)(this.Table));
+            public TblControlDataTable() {
+                this.TableName = "TblControl";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int GehaId {
-                get {
-                    return ((int)(this[this.tableXRepCard1.GehaIdColumn]));
+            internal TblControlDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
                 }
-                set {
-                    this[this.tableXRepCard1.GehaIdColumn] = value;
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected TblControlDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GehaIdColumn {
+                get {
+                    return this.columnGehaId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string text1 {
+            public global::System.Data.DataColumn ctr1Column {
                 get {
-                    return ((string)(this[this.tableXRepCard1.text1Column]));
-                }
-                set {
-                    this[this.tableXRepCard1.text1Column] = value;
+                    return this.columnctr1;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string text2 {
+            public global::System.Data.DataColumn ctr2Column {
                 get {
-                    return ((string)(this[this.tableXRepCard1.text2Column]));
-                }
-                set {
-                    this[this.tableXRepCard1.text2Column] = value;
+                    return this.columnctr2;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string text3 {
+            public global::System.Data.DataColumn ctr3Column {
                 get {
-                    return ((string)(this[this.tableXRepCard1.text3Column]));
-                }
-                set {
-                    this[this.tableXRepCard1.text3Column] = value;
+                    return this.columnctr3;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string text4 {
+            public global::System.Data.DataColumn ctr4Column {
                 get {
+                    return this.columnctr4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ctr5Column {
+                get {
+                    return this.columnctr5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ctr6Column {
+                get {
+                    return this.columnctr6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TblControlRow this[int index] {
+                get {
+                    return ((TblControlRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TblControlRowChangeEventHandler TblControlRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TblControlRowChangeEventHandler TblControlRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TblControlRowChangeEventHandler TblControlRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TblControlRowChangeEventHandler TblControlRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddTblControlRow(TblControlRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TblControlRow AddTblControlRow(int GehaId, bool ctr1, bool ctr2, bool ctr3, bool ctr4, bool ctr5, bool ctr6) {
+                TblControlRow rowTblControlRow = ((TblControlRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        GehaId,
+                        ctr1,
+                        ctr2,
+                        ctr3,
+                        ctr4,
+                        ctr5,
+                        ctr6};
+                rowTblControlRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTblControlRow);
+                return rowTblControlRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TblControlRow FindByGehaId(int GehaId) {
+                return ((TblControlRow)(this.Rows.Find(new object[] {
+                            GehaId})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TblControlDataTable cln = ((TblControlDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TblControlDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnGehaId = base.Columns["GehaId"];
+                this.columnctr1 = base.Columns["ctr1"];
+                this.columnctr2 = base.Columns["ctr2"];
+                this.columnctr3 = base.Columns["ctr3"];
+                this.columnctr4 = base.Columns["ctr4"];
+                this.columnctr5 = base.Columns["ctr5"];
+                this.columnctr6 = base.Columns["ctr6"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnGehaId = new global::System.Data.DataColumn("GehaId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGehaId);
+                this.columnctr1 = new global::System.Data.DataColumn("ctr1", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnctr1);
+                this.columnctr2 = new global::System.Data.DataColumn("ctr2", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnctr2);
+                this.columnctr3 = new global::System.Data.DataColumn("ctr3", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnctr3);
+                this.columnctr4 = new global::System.Data.DataColumn("ctr4", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnctr4);
+                this.columnctr5 = new global::System.Data.DataColumn("ctr5", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnctr5);
+                this.columnctr6 = new global::System.Data.DataColumn("ctr6", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnctr6);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnGehaId}, true));
+                this.columnGehaId.AllowDBNull = false;
+                this.columnGehaId.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TblControlRow NewTblControlRow() {
+                return ((TblControlRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TblControlRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TblControlRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TblControlRowChanged != null)) {
+                    this.TblControlRowChanged(this, new TblControlRowChangeEvent(((TblControlRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TblControlRowChanging != null)) {
+                    this.TblControlRowChanging(this, new TblControlRowChangeEvent(((TblControlRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TblControlRowDeleted != null)) {
+                    this.TblControlRowDeleted(this, new TblControlRowChangeEvent(((TblControlRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TblControlRowDeleting != null)) {
+                    this.TblControlRowDeleting(this, new TblControlRowChangeEvent(((TblControlRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveTblControlRow(TblControlRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsQry ds = new dsQry();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TblControlDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
                     try {
-                        return ((string)(this[this.tableXRepCard1.text4Column]));
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'text4\' in table \'XRepCard1\' is DBNull.", e);
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
                     }
                 }
-                set {
-                    this[this.tableXRepCard1.text4Column] = value;
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class XRepCard1DataTable : global::System.Data.TypedTableBase<XRepCard1Row> {
+            
+            private global::System.Data.DataColumn columnDataId;
+            
+            private global::System.Data.DataColumn columnGehaId;
+            
+            private global::System.Data.DataColumn columnimgpath;
+            
+            private global::System.Data.DataColumn columntext1;
+            
+            private global::System.Data.DataColumn columntext2;
+            
+            private global::System.Data.DataColumn columntext3;
+            
+            private global::System.Data.DataColumn columntext4;
+            
+            private global::System.Data.DataColumn columntext5;
+            
+            private global::System.Data.DataColumn columntext1lbl;
+            
+            private global::System.Data.DataColumn columntext2lbl;
+            
+            private global::System.Data.DataColumn columntext3lbl;
+            
+            private global::System.Data.DataColumn columntext4lbl;
+            
+            private global::System.Data.DataColumn columntext5lbl;
+            
+            private global::System.Data.DataColumn columntext6lbl;
+            
+            private global::System.Data.DataColumn columntext7lbl;
+            
+            private global::System.Data.DataColumn columntext8lbl;
+            
+            private global::System.Data.DataColumn columntext9lbl;
+            
+            private global::System.Data.DataColumn columntext10lbl;
+            
+            private global::System.Data.DataColumn columntext11lbl;
+            
+            private global::System.Data.DataColumn columntext12lbl;
+            
+            private global::System.Data.DataColumn columntext6;
+            
+            private global::System.Data.DataColumn columntext7;
+            
+            private global::System.Data.DataColumn columntext8;
+            
+            private global::System.Data.DataColumn columntext9;
+            
+            private global::System.Data.DataColumn columntext10;
+            
+            private global::System.Data.DataColumn columntext11;
+            
+            private global::System.Data.DataColumn columntext12;
+            
+            private global::System.Data.DataColumn columnTextColor;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public XRepCard1DataTable() {
+                this.TableName = "XRepCard1";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal XRepCard1DataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected XRepCard1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DataIdColumn {
+                get {
+                    return this.columnDataId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string text5 {
+            public global::System.Data.DataColumn GehaIdColumn {
                 get {
+                    return this.columnGehaId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn imgpathColumn {
+                get {
+                    return this.columnimgpath;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text1Column {
+                get {
+                    return this.columntext1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text2Column {
+                get {
+                    return this.columntext2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text3Column {
+                get {
+                    return this.columntext3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text4Column {
+                get {
+                    return this.columntext4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text5Column {
+                get {
+                    return this.columntext5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text1lblColumn {
+                get {
+                    return this.columntext1lbl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text2lblColumn {
+                get {
+                    return this.columntext2lbl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text3lblColumn {
+                get {
+                    return this.columntext3lbl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text4lblColumn {
+                get {
+                    return this.columntext4lbl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text5lblColumn {
+                get {
+                    return this.columntext5lbl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text6lblColumn {
+                get {
+                    return this.columntext6lbl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text7lblColumn {
+                get {
+                    return this.columntext7lbl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text8lblColumn {
+                get {
+                    return this.columntext8lbl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text9lblColumn {
+                get {
+                    return this.columntext9lbl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text10lblColumn {
+                get {
+                    return this.columntext10lbl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text11lblColumn {
+                get {
+                    return this.columntext11lbl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text12lblColumn {
+                get {
+                    return this.columntext12lbl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text6Column {
+                get {
+                    return this.columntext6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text7Column {
+                get {
+                    return this.columntext7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text8Column {
+                get {
+                    return this.columntext8;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text9Column {
+                get {
+                    return this.columntext9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text10Column {
+                get {
+                    return this.columntext10;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text11Column {
+                get {
+                    return this.columntext11;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text12Column {
+                get {
+                    return this.columntext12;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TextColorColumn {
+                get {
+                    return this.columnTextColor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public XRepCard1Row this[int index] {
+                get {
+                    return ((XRepCard1Row)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event XRepCard1RowChangeEventHandler XRepCard1RowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event XRepCard1RowChangeEventHandler XRepCard1RowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event XRepCard1RowChangeEventHandler XRepCard1RowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event XRepCard1RowChangeEventHandler XRepCard1RowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddXRepCard1Row(XRepCard1Row row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public XRepCard1Row AddXRepCard1Row(
+                        int GehaId, 
+                        string imgpath, 
+                        string text1, 
+                        string text2, 
+                        string text3, 
+                        string text4, 
+                        System.DateTime text5, 
+                        string text1lbl, 
+                        string text2lbl, 
+                        string text3lbl, 
+                        string text4lbl, 
+                        string text5lbl, 
+                        string text6lbl, 
+                        string text7lbl, 
+                        string text8lbl, 
+                        string text9lbl, 
+                        string text10lbl, 
+                        string text11lbl, 
+                        string text12lbl, 
+                        System.DateTime text6, 
+                        string text7, 
+                        string text8, 
+                        string text9, 
+                        string text10, 
+                        string text11, 
+                        string text12, 
+                        string TextColor) {
+                XRepCard1Row rowXRepCard1Row = ((XRepCard1Row)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        GehaId,
+                        imgpath,
+                        text1,
+                        text2,
+                        text3,
+                        text4,
+                        text5,
+                        text1lbl,
+                        text2lbl,
+                        text3lbl,
+                        text4lbl,
+                        text5lbl,
+                        text6lbl,
+                        text7lbl,
+                        text8lbl,
+                        text9lbl,
+                        text10lbl,
+                        text11lbl,
+                        text12lbl,
+                        text6,
+                        text7,
+                        text8,
+                        text9,
+                        text10,
+                        text11,
+                        text12,
+                        TextColor};
+                rowXRepCard1Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowXRepCard1Row);
+                return rowXRepCard1Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                XRepCard1DataTable cln = ((XRepCard1DataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new XRepCard1DataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnDataId = base.Columns["DataId"];
+                this.columnGehaId = base.Columns["GehaId"];
+                this.columnimgpath = base.Columns["imgpath"];
+                this.columntext1 = base.Columns["text1"];
+                this.columntext2 = base.Columns["text2"];
+                this.columntext3 = base.Columns["text3"];
+                this.columntext4 = base.Columns["text4"];
+                this.columntext5 = base.Columns["text5"];
+                this.columntext1lbl = base.Columns["text1lbl"];
+                this.columntext2lbl = base.Columns["text2lbl"];
+                this.columntext3lbl = base.Columns["text3lbl"];
+                this.columntext4lbl = base.Columns["text4lbl"];
+                this.columntext5lbl = base.Columns["text5lbl"];
+                this.columntext6lbl = base.Columns["text6lbl"];
+                this.columntext7lbl = base.Columns["text7lbl"];
+                this.columntext8lbl = base.Columns["text8lbl"];
+                this.columntext9lbl = base.Columns["text9lbl"];
+                this.columntext10lbl = base.Columns["text10lbl"];
+                this.columntext11lbl = base.Columns["text11lbl"];
+                this.columntext12lbl = base.Columns["text12lbl"];
+                this.columntext6 = base.Columns["text6"];
+                this.columntext7 = base.Columns["text7"];
+                this.columntext8 = base.Columns["text8"];
+                this.columntext9 = base.Columns["text9"];
+                this.columntext10 = base.Columns["text10"];
+                this.columntext11 = base.Columns["text11"];
+                this.columntext12 = base.Columns["text12"];
+                this.columnTextColor = base.Columns["TextColor"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnDataId = new global::System.Data.DataColumn("DataId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDataId);
+                this.columnGehaId = new global::System.Data.DataColumn("GehaId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGehaId);
+                this.columnimgpath = new global::System.Data.DataColumn("imgpath", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimgpath);
+                this.columntext1 = new global::System.Data.DataColumn("text1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext1);
+                this.columntext2 = new global::System.Data.DataColumn("text2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext2);
+                this.columntext3 = new global::System.Data.DataColumn("text3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext3);
+                this.columntext4 = new global::System.Data.DataColumn("text4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext4);
+                this.columntext5 = new global::System.Data.DataColumn("text5", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext5);
+                this.columntext1lbl = new global::System.Data.DataColumn("text1lbl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext1lbl);
+                this.columntext2lbl = new global::System.Data.DataColumn("text2lbl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext2lbl);
+                this.columntext3lbl = new global::System.Data.DataColumn("text3lbl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext3lbl);
+                this.columntext4lbl = new global::System.Data.DataColumn("text4lbl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext4lbl);
+                this.columntext5lbl = new global::System.Data.DataColumn("text5lbl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext5lbl);
+                this.columntext6lbl = new global::System.Data.DataColumn("text6lbl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext6lbl);
+                this.columntext7lbl = new global::System.Data.DataColumn("text7lbl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext7lbl);
+                this.columntext8lbl = new global::System.Data.DataColumn("text8lbl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext8lbl);
+                this.columntext9lbl = new global::System.Data.DataColumn("text9lbl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext9lbl);
+                this.columntext10lbl = new global::System.Data.DataColumn("text10lbl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext10lbl);
+                this.columntext11lbl = new global::System.Data.DataColumn("text11lbl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext11lbl);
+                this.columntext12lbl = new global::System.Data.DataColumn("text12lbl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext12lbl);
+                this.columntext6 = new global::System.Data.DataColumn("text6", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext6);
+                this.columntext7 = new global::System.Data.DataColumn("text7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext7);
+                this.columntext8 = new global::System.Data.DataColumn("text8", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext8);
+                this.columntext9 = new global::System.Data.DataColumn("text9", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext9);
+                this.columntext10 = new global::System.Data.DataColumn("text10", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext10);
+                this.columntext11 = new global::System.Data.DataColumn("text11", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext11);
+                this.columntext12 = new global::System.Data.DataColumn("text12", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext12);
+                this.columnTextColor = new global::System.Data.DataColumn("TextColor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTextColor);
+                this.columnDataId.AutoIncrement = true;
+                this.columnDataId.AutoIncrementSeed = -1;
+                this.columnDataId.AutoIncrementStep = -1;
+                this.columnDataId.AllowDBNull = false;
+                this.columnDataId.ReadOnly = true;
+                this.columnGehaId.AllowDBNull = false;
+                this.columnimgpath.ReadOnly = true;
+                this.columnimgpath.MaxLength = 305;
+                this.columntext1.AllowDBNull = false;
+                this.columntext1.MaxLength = 150;
+                this.columntext2.MaxLength = 150;
+                this.columntext3.MaxLength = 150;
+                this.columntext4.MaxLength = 150;
+                this.columntext1lbl.ReadOnly = true;
+                this.columntext1lbl.MaxLength = 50;
+                this.columntext2lbl.ReadOnly = true;
+                this.columntext2lbl.MaxLength = 50;
+                this.columntext3lbl.ReadOnly = true;
+                this.columntext3lbl.MaxLength = 50;
+                this.columntext4lbl.ReadOnly = true;
+                this.columntext4lbl.MaxLength = 50;
+                this.columntext5lbl.ReadOnly = true;
+                this.columntext5lbl.MaxLength = 50;
+                this.columntext6lbl.ReadOnly = true;
+                this.columntext6lbl.MaxLength = 50;
+                this.columntext7lbl.ReadOnly = true;
+                this.columntext7lbl.MaxLength = 50;
+                this.columntext8lbl.ReadOnly = true;
+                this.columntext8lbl.MaxLength = 50;
+                this.columntext9lbl.ReadOnly = true;
+                this.columntext9lbl.MaxLength = 50;
+                this.columntext10lbl.ReadOnly = true;
+                this.columntext10lbl.MaxLength = 50;
+                this.columntext11lbl.ReadOnly = true;
+                this.columntext11lbl.MaxLength = 50;
+                this.columntext12lbl.ReadOnly = true;
+                this.columntext12lbl.MaxLength = 50;
+                this.columntext7.MaxLength = 150;
+                this.columntext8.MaxLength = 150;
+                this.columntext9.MaxLength = 150;
+                this.columntext10.MaxLength = 150;
+                this.columntext11.MaxLength = 150;
+                this.columntext12.MaxLength = 150;
+                this.columnTextColor.ReadOnly = true;
+                this.columnTextColor.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public XRepCard1Row NewXRepCard1Row() {
+                return ((XRepCard1Row)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new XRepCard1Row(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(XRepCard1Row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.XRepCard1RowChanged != null)) {
+                    this.XRepCard1RowChanged(this, new XRepCard1RowChangeEvent(((XRepCard1Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.XRepCard1RowChanging != null)) {
+                    this.XRepCard1RowChanging(this, new XRepCard1RowChangeEvent(((XRepCard1Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.XRepCard1RowDeleted != null)) {
+                    this.XRepCard1RowDeleted(this, new XRepCard1RowChangeEvent(((XRepCard1Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.XRepCard1RowDeleting != null)) {
+                    this.XRepCard1RowDeleting(this, new XRepCard1RowChangeEvent(((XRepCard1Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveXRepCard1Row(XRepCard1Row row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsQry ds = new dsQry();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "XRepCard1DataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
                     try {
-                        return ((string)(this[this.tableXRepCard1.text5Column]));
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'text5\' in table \'XRepCard1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableXRepCard1.text5Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string imgpath {
-                get {
-                    try {
-                        return ((string)(this[this.tableXRepCard1.imgpathColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'imgpath\' in table \'XRepCard1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableXRepCard1.imgpathColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string text1lbl {
-                get {
-                    try {
-                        return ((string)(this[this.tableXRepCard1.text1lblColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'text1lbl\' in table \'XRepCard1\' is DBNull.", e);
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
                     }
                 }
-                set {
-                    this[this.tableXRepCard1.text1lblColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string text2lbl {
-                get {
-                    try {
-                        return ((string)(this[this.tableXRepCard1.text2lblColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'text2lbl\' in table \'XRepCard1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableXRepCard1.text2lblColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string text3lbl {
-                get {
-                    try {
-                        return ((string)(this[this.tableXRepCard1.text3lblColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'text3lbl\' in table \'XRepCard1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableXRepCard1.text3lblColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string text4lbl {
-                get {
-                    try {
-                        return ((string)(this[this.tableXRepCard1.text4lblColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'text4lbl\' in table \'XRepCard1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableXRepCard1.text4lblColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string text5lbl {
-                get {
-                    try {
-                        return ((string)(this[this.tableXRepCard1.text5lblColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'text5lbl\' in table \'XRepCard1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableXRepCard1.text5lblColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int DataId {
-                get {
-                    return ((int)(this[this.tableXRepCard1.DataIdColumn]));
-                }
-                set {
-                    this[this.tableXRepCard1.DataIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public lueXRepCard1Row lueXRepCard1Row {
-                get {
-                    return ((lueXRepCard1Row)(this.GetParentRow(this.Table.ParentRelations["FK_TBLALLData_CDGeha"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_TBLALLData_CDGeha"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Istext4Null() {
-                return this.IsNull(this.tableXRepCard1.text4Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Settext4Null() {
-                this[this.tableXRepCard1.text4Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Istext5Null() {
-                return this.IsNull(this.tableXRepCard1.text5Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Settext5Null() {
-                this[this.tableXRepCard1.text5Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsimgpathNull() {
-                return this.IsNull(this.tableXRepCard1.imgpathColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetimgpathNull() {
-                this[this.tableXRepCard1.imgpathColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Istext1lblNull() {
-                return this.IsNull(this.tableXRepCard1.text1lblColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Settext1lblNull() {
-                this[this.tableXRepCard1.text1lblColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Istext2lblNull() {
-                return this.IsNull(this.tableXRepCard1.text2lblColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Settext2lblNull() {
-                this[this.tableXRepCard1.text2lblColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Istext3lblNull() {
-                return this.IsNull(this.tableXRepCard1.text3lblColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Settext3lblNull() {
-                this[this.tableXRepCard1.text3lblColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Istext4lblNull() {
-                return this.IsNull(this.tableXRepCard1.text4lblColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Settext4lblNull() {
-                this[this.tableXRepCard1.text4lblColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Istext5lblNull() {
-                return this.IsNull(this.tableXRepCard1.text5lblColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Settext5lblNull() {
-                this[this.tableXRepCard1.text5lblColumn] = global::System.Convert.DBNull;
+                xs.Add(dsSchema);
+                return type;
             }
         }
         
@@ -1780,17 +2099,6 @@ namespace ECard.Datasource {
                 }
                 set {
                     this[this.tablelueXRepCard1.GehaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public XRepCard1Row[] GetXRepCard1Rows() {
-                if ((this.Table.ChildRelations["FK_TBLALLData_CDGeha"] == null)) {
-                    return new XRepCard1Row[0];
-                }
-                else {
-                    return ((XRepCard1Row[])(base.GetChildRows(this.Table.ChildRelations["FK_TBLALLData_CDGeha"])));
                 }
             }
         }
@@ -1961,36 +2269,944 @@ namespace ECard.Datasource {
         }
         
         /// <summary>
-        ///Row event argument class
+        ///Represents strongly named DataRow class.
         ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class XRepCard1RowChangeEvent : global::System.EventArgs {
+        public partial class TblControlRow : global::System.Data.DataRow {
             
-            private XRepCard1Row eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
+            private TblControlDataTable tableTblControl;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public XRepCard1RowChangeEvent(XRepCard1Row row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
+            internal TblControlRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTblControl = ((TblControlDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public XRepCard1Row Row {
+            public int GehaId {
                 get {
-                    return this.eventRow;
+                    return ((int)(this[this.tableTblControl.GehaIdColumn]));
+                }
+                set {
+                    this[this.tableTblControl.GehaIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
+            public bool ctr1 {
                 get {
-                    return this.eventAction;
+                    try {
+                        return ((bool)(this[this.tableTblControl.ctr1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ctr1\' in table \'TblControl\' is DBNull.", e);
+                    }
                 }
+                set {
+                    this[this.tableTblControl.ctr1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool ctr2 {
+                get {
+                    try {
+                        return ((bool)(this[this.tableTblControl.ctr2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ctr2\' in table \'TblControl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblControl.ctr2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool ctr3 {
+                get {
+                    try {
+                        return ((bool)(this[this.tableTblControl.ctr3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ctr3\' in table \'TblControl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblControl.ctr3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool ctr4 {
+                get {
+                    try {
+                        return ((bool)(this[this.tableTblControl.ctr4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ctr4\' in table \'TblControl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblControl.ctr4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool ctr5 {
+                get {
+                    try {
+                        return ((bool)(this[this.tableTblControl.ctr5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ctr5\' in table \'TblControl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblControl.ctr5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool ctr6 {
+                get {
+                    try {
+                        return ((bool)(this[this.tableTblControl.ctr6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ctr6\' in table \'TblControl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblControl.ctr6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isctr1Null() {
+                return this.IsNull(this.tableTblControl.ctr1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setctr1Null() {
+                this[this.tableTblControl.ctr1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isctr2Null() {
+                return this.IsNull(this.tableTblControl.ctr2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setctr2Null() {
+                this[this.tableTblControl.ctr2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isctr3Null() {
+                return this.IsNull(this.tableTblControl.ctr3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setctr3Null() {
+                this[this.tableTblControl.ctr3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isctr4Null() {
+                return this.IsNull(this.tableTblControl.ctr4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setctr4Null() {
+                this[this.tableTblControl.ctr4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isctr5Null() {
+                return this.IsNull(this.tableTblControl.ctr5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setctr5Null() {
+                this[this.tableTblControl.ctr5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isctr6Null() {
+                return this.IsNull(this.tableTblControl.ctr6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setctr6Null() {
+                this[this.tableTblControl.ctr6Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class XRepCard1Row : global::System.Data.DataRow {
+            
+            private XRepCard1DataTable tableXRepCard1;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal XRepCard1Row(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableXRepCard1 = ((XRepCard1DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int DataId {
+                get {
+                    return ((int)(this[this.tableXRepCard1.DataIdColumn]));
+                }
+                set {
+                    this[this.tableXRepCard1.DataIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int GehaId {
+                get {
+                    return ((int)(this[this.tableXRepCard1.GehaIdColumn]));
+                }
+                set {
+                    this[this.tableXRepCard1.GehaIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string imgpath {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.imgpathColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'imgpath\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.imgpathColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text1 {
+                get {
+                    return ((string)(this[this.tableXRepCard1.text1Column]));
+                }
+                set {
+                    this[this.tableXRepCard1.text1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text2\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text3\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text4\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime text5 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableXRepCard1.text5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text5\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text1lbl {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text1lblColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text1lbl\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text1lblColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text2lbl {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text2lblColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text2lbl\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text2lblColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text3lbl {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text3lblColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text3lbl\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text3lblColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text4lbl {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text4lblColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text4lbl\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text4lblColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text5lbl {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text5lblColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text5lbl\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text5lblColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text6lbl {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text6lblColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text6lbl\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text6lblColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text7lbl {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text7lblColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text7lbl\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text7lblColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text8lbl {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text8lblColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text8lbl\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text8lblColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text9lbl {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text9lblColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text9lbl\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text9lblColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text10lbl {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text10lblColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text10lbl\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text10lblColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text11lbl {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text11lblColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text11lbl\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text11lblColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text12lbl {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text12lblColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text12lbl\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text12lblColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime text6 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableXRepCard1.text6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text6\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text7 {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text7Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text7\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text8 {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text8Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text8\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text8Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text9 {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text9Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text9\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text10 {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text10Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text10\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text10Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text11 {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text11Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text11\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text11Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text12 {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text12Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text12\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text12Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TextColor {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.TextColorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TextColor\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.TextColorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsimgpathNull() {
+                return this.IsNull(this.tableXRepCard1.imgpathColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetimgpathNull() {
+                this[this.tableXRepCard1.imgpathColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext2Null() {
+                return this.IsNull(this.tableXRepCard1.text2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext2Null() {
+                this[this.tableXRepCard1.text2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext3Null() {
+                return this.IsNull(this.tableXRepCard1.text3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext3Null() {
+                this[this.tableXRepCard1.text3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext4Null() {
+                return this.IsNull(this.tableXRepCard1.text4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext4Null() {
+                this[this.tableXRepCard1.text4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext5Null() {
+                return this.IsNull(this.tableXRepCard1.text5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext5Null() {
+                this[this.tableXRepCard1.text5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext1lblNull() {
+                return this.IsNull(this.tableXRepCard1.text1lblColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext1lblNull() {
+                this[this.tableXRepCard1.text1lblColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext2lblNull() {
+                return this.IsNull(this.tableXRepCard1.text2lblColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext2lblNull() {
+                this[this.tableXRepCard1.text2lblColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext3lblNull() {
+                return this.IsNull(this.tableXRepCard1.text3lblColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext3lblNull() {
+                this[this.tableXRepCard1.text3lblColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext4lblNull() {
+                return this.IsNull(this.tableXRepCard1.text4lblColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext4lblNull() {
+                this[this.tableXRepCard1.text4lblColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext5lblNull() {
+                return this.IsNull(this.tableXRepCard1.text5lblColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext5lblNull() {
+                this[this.tableXRepCard1.text5lblColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext6lblNull() {
+                return this.IsNull(this.tableXRepCard1.text6lblColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext6lblNull() {
+                this[this.tableXRepCard1.text6lblColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext7lblNull() {
+                return this.IsNull(this.tableXRepCard1.text7lblColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext7lblNull() {
+                this[this.tableXRepCard1.text7lblColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext8lblNull() {
+                return this.IsNull(this.tableXRepCard1.text8lblColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext8lblNull() {
+                this[this.tableXRepCard1.text8lblColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext9lblNull() {
+                return this.IsNull(this.tableXRepCard1.text9lblColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext9lblNull() {
+                this[this.tableXRepCard1.text9lblColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext10lblNull() {
+                return this.IsNull(this.tableXRepCard1.text10lblColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext10lblNull() {
+                this[this.tableXRepCard1.text10lblColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext11lblNull() {
+                return this.IsNull(this.tableXRepCard1.text11lblColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext11lblNull() {
+                this[this.tableXRepCard1.text11lblColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext12lblNull() {
+                return this.IsNull(this.tableXRepCard1.text12lblColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext12lblNull() {
+                this[this.tableXRepCard1.text12lblColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext6Null() {
+                return this.IsNull(this.tableXRepCard1.text6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext6Null() {
+                this[this.tableXRepCard1.text6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext7Null() {
+                return this.IsNull(this.tableXRepCard1.text7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext7Null() {
+                this[this.tableXRepCard1.text7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext8Null() {
+                return this.IsNull(this.tableXRepCard1.text8Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext8Null() {
+                this[this.tableXRepCard1.text8Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext9Null() {
+                return this.IsNull(this.tableXRepCard1.text9Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext9Null() {
+                this[this.tableXRepCard1.text9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext10Null() {
+                return this.IsNull(this.tableXRepCard1.text10Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext10Null() {
+                this[this.tableXRepCard1.text10Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext11Null() {
+                return this.IsNull(this.tableXRepCard1.text11Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext11Null() {
+                this[this.tableXRepCard1.text11Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext12Null() {
+                return this.IsNull(this.tableXRepCard1.text12Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext12Null() {
+                this[this.tableXRepCard1.text12Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTextColorNull() {
+                return this.IsNull(this.tableXRepCard1.TextColorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTextColorNull() {
+                this[this.tableXRepCard1.TextColorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2061,209 +3277,78 @@ namespace ECard.Datasource {
                 }
             }
         }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class TblControlRowChangeEvent : global::System.EventArgs {
+            
+            private TblControlRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TblControlRowChangeEvent(TblControlRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TblControlRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class XRepCard1RowChangeEvent : global::System.EventArgs {
+            
+            private XRepCard1Row eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public XRepCard1RowChangeEvent(XRepCard1Row row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public XRepCard1Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
     }
 }
 namespace ECard.Datasource.dsQryTableAdapters {
     
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class XRepCard1TableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public XRepCard1TableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "XRepCard1";
-            tableMapping.ColumnMappings.Add("GehaId", "GehaId");
-            tableMapping.ColumnMappings.Add("text1", "text1");
-            tableMapping.ColumnMappings.Add("text2", "text2");
-            tableMapping.ColumnMappings.Add("text3", "text3");
-            tableMapping.ColumnMappings.Add("text4", "text4");
-            tableMapping.ColumnMappings.Add("text5", "text5");
-            tableMapping.ColumnMappings.Add("imgpath", "imgpath");
-            tableMapping.ColumnMappings.Add("text1lbl", "text1lbl");
-            tableMapping.ColumnMappings.Add("text2lbl", "text2lbl");
-            tableMapping.ColumnMappings.Add("text3lbl", "text3lbl");
-            tableMapping.ColumnMappings.Add("text4lbl", "text4lbl");
-            tableMapping.ColumnMappings.Add("text5lbl", "text5lbl");
-            tableMapping.ColumnMappings.Add("DataId", "DataId");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ECard.Properties.Settings.Default.E_CardConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        DataId, GehaId, imgpath, text1, text2, text3, text4, text5,
-                             (SELECT        LabelText
-                                FROM            TBLLabel
-                                WHERE        (GehaId = TBLALLData.GehaId) AND (LabelOrder = 1)) AS text1lbl,
-                             (SELECT        LabelText
-                                FROM            TBLLabel AS TBLLabel_4
-                                WHERE        (GehaId = TBLALLData.GehaId) AND (LabelOrder = 2)) AS text2lbl,
-                             (SELECT        LabelText
-                                FROM            TBLLabel AS TBLLabel_3
-                                WHERE        (GehaId = TBLALLData.GehaId) AND (LabelOrder = 3)) AS text3lbl,
-                             (SELECT        LabelText
-                                FROM            TBLLabel AS TBLLabel_2
-                                WHERE        (GehaId = TBLALLData.GehaId) AND (LabelOrder = 4)) AS text4lbl,
-                             (SELECT        LabelText
-                                FROM            TBLLabel AS TBLLabel_1
-                                WHERE        (GehaId = TBLALLData.GehaId) AND (LabelOrder = 5)) AS text5lbl
-FROM            TBLALLData
-WHERE GehaId = @GehaId";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GehaId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "GehaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsQry.XRepCard1DataTable dataTable, int GehaId) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(GehaId));
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsQry.XRepCard1DataTable GetData(int GehaId) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(GehaId));
-            dsQry.XRepCard1DataTable dataTable = new dsQry.XRepCard1DataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -2609,6 +3694,423 @@ WHERE GehaId = @GehaId";
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(GehaId));
             dsQry.GridXRepCard1DataTable dataTable = new dsQry.GridXRepCard1DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class TblControlTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public TblControlTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "TblControl";
+            tableMapping.ColumnMappings.Add("GehaId", "GehaId");
+            tableMapping.ColumnMappings.Add("ctr1", "ctr1");
+            tableMapping.ColumnMappings.Add("ctr2", "ctr2");
+            tableMapping.ColumnMappings.Add("ctr3", "ctr3");
+            tableMapping.ColumnMappings.Add("ctr4", "ctr4");
+            tableMapping.ColumnMappings.Add("ctr5", "ctr5");
+            tableMapping.ColumnMappings.Add("ctr6", "ctr6");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ECard.Properties.Settings.Default.E_CardConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        GehaId, ctr1, ctr2, ctr3, ctr4, ctr5, ctr6\r\nFROM            TblCont" +
+                "rol\r\nWHERE        (GehaId = @GehaId)";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GehaId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "GehaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int FillByGehaId(dsQry.TblControlDataTable dataTable, int GehaId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(GehaId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsQry.TblControlDataTable GetDataByGehaId(int GehaId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(GehaId));
+            dsQry.TblControlDataTable dataTable = new dsQry.TblControlDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class XRepCard1TableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public XRepCard1TableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "XRepCard1";
+            tableMapping.ColumnMappings.Add("DataId", "DataId");
+            tableMapping.ColumnMappings.Add("GehaId", "GehaId");
+            tableMapping.ColumnMappings.Add("imgpath", "imgpath");
+            tableMapping.ColumnMappings.Add("text1", "text1");
+            tableMapping.ColumnMappings.Add("text2", "text2");
+            tableMapping.ColumnMappings.Add("text3", "text3");
+            tableMapping.ColumnMappings.Add("text4", "text4");
+            tableMapping.ColumnMappings.Add("text5", "text5");
+            tableMapping.ColumnMappings.Add("text1lbl", "text1lbl");
+            tableMapping.ColumnMappings.Add("text2lbl", "text2lbl");
+            tableMapping.ColumnMappings.Add("text3lbl", "text3lbl");
+            tableMapping.ColumnMappings.Add("text4lbl", "text4lbl");
+            tableMapping.ColumnMappings.Add("text5lbl", "text5lbl");
+            tableMapping.ColumnMappings.Add("text6lbl", "text6lbl");
+            tableMapping.ColumnMappings.Add("text7lbl", "text7lbl");
+            tableMapping.ColumnMappings.Add("text8lbl", "text8lbl");
+            tableMapping.ColumnMappings.Add("text9lbl", "text9lbl");
+            tableMapping.ColumnMappings.Add("text10lbl", "text10lbl");
+            tableMapping.ColumnMappings.Add("text11lbl", "text11lbl");
+            tableMapping.ColumnMappings.Add("text12lbl", "text12lbl");
+            tableMapping.ColumnMappings.Add("text6", "text6");
+            tableMapping.ColumnMappings.Add("text7", "text7");
+            tableMapping.ColumnMappings.Add("text8", "text8");
+            tableMapping.ColumnMappings.Add("text9", "text9");
+            tableMapping.ColumnMappings.Add("text10", "text10");
+            tableMapping.ColumnMappings.Add("text11", "text11");
+            tableMapping.ColumnMappings.Add("text12", "text12");
+            tableMapping.ColumnMappings.Add("TextColor", "TextColor");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ECard.Properties.Settings.Default.E_CardConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        DataId, GehaId,\r\n                             (SELECT        allimg" +
+                "path\r\n                                FROM            CDGeha\r\n                  " +
+                "              WHERE        (GehaId = TBLALLData.GehaId)) + \'\\\' + imgpath + \'.jpg" +
+                "\' AS imgpath, text1, text2, text3, text4, CONVERT(Date, [text5], 103) AS [text5]" +
+                ",\r\n                             (SELECT        LabelText\r\n                      " +
+                "          FROM            TBLLabel\r\n                                WHERE       " +
+                " (GehaId = TBLALLData.GehaId) AND (LabelOrder = 1)) AS text1lbl,\r\n              " +
+                "               (SELECT        LabelText\r\n                                FROM   " +
+                "         TBLLabel AS TBLLabel_4\r\n                                WHERE        (G" +
+                "ehaId = TBLALLData.GehaId) AND (LabelOrder = 2)) AS text2lbl,\r\n                 " +
+                "            (SELECT        LabelText\r\n                                FROM      " +
+                "      TBLLabel AS TBLLabel_3\r\n                                WHERE        (Geha" +
+                "Id = TBLALLData.GehaId) AND (LabelOrder = 3)) AS text3lbl,\r\n                    " +
+                "         (SELECT        LabelText\r\n                                FROM         " +
+                "   TBLLabel AS TBLLabel_2\r\n                                WHERE        (GehaId " +
+                "= TBLALLData.GehaId) AND (LabelOrder = 4)) AS text4lbl,\r\n                       " +
+                "      (SELECT        LabelText\r\n                                FROM            " +
+                "TBLLabel AS TBLLabel_1\r\n                                WHERE        (GehaId = T" +
+                "BLALLData.GehaId) AND (LabelOrder = 5)) AS text5lbl,\r\n                          " +
+                "   (SELECT        LabelText\r\n                                FROM            TBL" +
+                "Label AS TBLLabel_11\r\n                                WHERE        (GehaId = TBL" +
+                "ALLData.GehaId) AND (LabelOrder = 6)) AS text6lbl,\r\n                            " +
+                " (SELECT        LabelText\r\n                                FROM            TBLLa" +
+                "bel AS TBLLabel_10\r\n                                WHERE        (GehaId = TBLAL" +
+                "LData.GehaId) AND (LabelOrder = 7)) AS text7lbl,\r\n                             (" +
+                "SELECT        LabelText\r\n                                FROM            TBLLabe" +
+                "l AS TBLLabel_9\r\n                                WHERE        (GehaId = TBLALLDa" +
+                "ta.GehaId) AND (LabelOrder = 8)) AS text8lbl,\r\n                             (SEL" +
+                "ECT        LabelText\r\n                                FROM            TBLLabel A" +
+                "S TBLLabel_8\r\n                                WHERE        (GehaId = TBLALLData." +
+                "GehaId) AND (LabelOrder = 9)) AS text9lbl,\r\n                             (SELECT" +
+                "        LabelText\r\n                                FROM            TBLLabel AS T" +
+                "BLLabel_7\r\n                                WHERE        (GehaId = TBLALLData.Geh" +
+                "aId) AND (LabelOrder = 10)) AS text10lbl,\r\n                             (SELECT " +
+                "       LabelText\r\n                                FROM            TBLLabel AS TB" +
+                "LLabel_6\r\n                                WHERE        (GehaId = TBLALLData.Geha" +
+                "Id) AND (LabelOrder = 11)) AS text11lbl,\r\n                             (SELECT  " +
+                "      LabelText\r\n                                FROM            TBLLabel AS TBL" +
+                "Label_5\r\n                                WHERE        (GehaId = TBLALLData.GehaI" +
+                "d) AND (LabelOrder = 12)) AS text12lbl, CONVERT(Date, [text6], 103) AS [text6], " +
+                "text7, text8, text9, text10, text11, text12,\r\n                             (SELE" +
+                "CT        TextColor\r\n                                FROM            CDGeha AS C" +
+                "DGeha_1\r\n                                WHERE        (GehaId = TBLALLData.GehaI" +
+                "d)) AS TextColor\r\nFROM            TBLALLData\r\nWHERE        (GehaId = @GehaId)";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GehaId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "GehaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsQry.XRepCard1DataTable dataTable, int GehaId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(GehaId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsQry.XRepCard1DataTable GetData(int GehaId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(GehaId));
+            dsQry.XRepCard1DataTable dataTable = new dsQry.XRepCard1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
