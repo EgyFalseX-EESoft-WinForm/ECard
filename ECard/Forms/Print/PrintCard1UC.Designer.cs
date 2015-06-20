@@ -49,6 +49,7 @@
             this.coltext4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltext5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.btnPrint2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xRepCard1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
@@ -246,12 +247,24 @@
             // 
             // groupControl3
             // 
+            this.groupControl3.Controls.Add(this.btnPrint2);
             this.groupControl3.Controls.Add(this.btnPrint);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControl3.Location = new System.Drawing.Point(0, 300);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(720, 55);
             this.groupControl3.TabIndex = 5;
+            // 
+            // btnPrint2
+            // 
+            this.btnPrint2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint2.Image = global::ECard.Properties.Resources.print_16x16;
+            this.btnPrint2.Location = new System.Drawing.Point(449, 24);
+            this.btnPrint2.Name = "btnPrint2";
+            this.btnPrint2.Size = new System.Drawing.Size(130, 23);
+            this.btnPrint2.TabIndex = 2;
+            this.btnPrint2.Text = "الطباعة 2";
+            this.btnPrint2.Click += new System.EventHandler(this.btnPrint2_Click);
             // 
             // PrintCard1UC
             // 
@@ -303,5 +316,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn coltext4;
         private DevExpress.XtraGrid.Columns.GridColumn coltext5;
         private System.Windows.Forms.BindingSource xRepCard1BindingSource1;
+        private DevExpress.XtraEditors.SimpleButton btnPrint2;
     }
 }

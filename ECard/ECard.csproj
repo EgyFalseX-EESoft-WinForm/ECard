@@ -136,6 +136,7 @@
     </Compile>
     <Compile Include="Datasource\dsQry.cs">
       <DependentUpon>dsQry.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Datasource\dsQry.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -220,6 +221,12 @@
     <Compile Include="Forms\Print\PrintCard1UC.Designer.cs">
       <DependentUpon>PrintCard1UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\XRep\XRepCard2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\XRep\XRepCard2.Designer.cs">
+      <DependentUpon>XRepCard2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\XRep\XRepCard1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -266,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Print\PrintCard1UC.resx">
       <DependentUpon>PrintCard1UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XRep\XRepCard2.resx">
+      <DependentUpon>XRepCard2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\XRep\XRepCard1.resx">
       <DependentUpon>XRepCard1.cs</DependentUpon>
