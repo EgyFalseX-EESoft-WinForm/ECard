@@ -125,7 +125,7 @@ WHERE        (GehaId = @GehaId)</CommandText>
                                 WHERE        (GehaId = TBLALLData.GehaId) AND (LabelOrder = 11)) AS text11lbl,
                              (SELECT        LabelText
                                 FROM            TBLLabel AS TBLLabel_5
-                                WHERE        (GehaId = TBLALLData.GehaId) AND (LabelOrder = 12)) AS text12lbl, CONVERT(Date, [text6], 103) AS [text6], text7, text8, text9, text10, text11, text12,
+                                WHERE        (GehaId = TBLALLData.GehaId) AND (LabelOrder = 12)) AS text12lbl, CONVERT(Date, [text6], 103) AS [text6], text7, text8, text9, text10, text11, text12,text13,
                              (SELECT        TextColor
                                 FROM            CDGeha AS CDGeha_1
                                 WHERE        (GehaId = TBLALLData.GehaId)) AS TextColor
@@ -167,6 +167,7 @@ WHERE        (GehaId = @GehaId)</CommandText>
               <Mapping SourceColumn="text11" DataSetColumn="text11" />
               <Mapping SourceColumn="text12" DataSetColumn="text12" />
               <Mapping SourceColumn="TextColor" DataSetColumn="TextColor" />
+              <Mapping SourceColumn="text13" DataSetColumn="text13" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -205,7 +206,7 @@ FROM            TBLLabel</CommandText>
   <xs:element name="dsQry" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsQry" msprop:Generator_UserDSName="dsQry">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="lueXRepCard1" msprop:Generator_TableClassName="lueXRepCard1DataTable" msprop:Generator_TableVarName="tablelueXRepCard1" msprop:Generator_TablePropName="lueXRepCard1" msprop:Generator_RowDeletingName="lueXRepCard1RowDeleting" msprop:Generator_RowChangingName="lueXRepCard1RowChanging" msprop:Generator_RowEvHandlerName="lueXRepCard1RowChangeEventHandler" msprop:Generator_RowDeletedName="lueXRepCard1RowDeleted" msprop:Generator_UserTableName="lueXRepCard1" msprop:Generator_RowChangedName="lueXRepCard1RowChanged" msprop:Generator_RowEvArgName="lueXRepCard1RowChangeEvent" msprop:Generator_RowClassName="lueXRepCard1Row">
+        <xs:element name="lueXRepCard1" msprop:Generator_TableClassName="lueXRepCard1DataTable" msprop:Generator_TableVarName="tablelueXRepCard1" msprop:Generator_RowChangedName="lueXRepCard1RowChanged" msprop:Generator_TablePropName="lueXRepCard1" msprop:Generator_RowDeletingName="lueXRepCard1RowDeleting" msprop:Generator_RowChangingName="lueXRepCard1RowChanging" msprop:Generator_RowEvHandlerName="lueXRepCard1RowChangeEventHandler" msprop:Generator_RowDeletedName="lueXRepCard1RowDeleted" msprop:Generator_RowClassName="lueXRepCard1Row" msprop:Generator_UserTableName="lueXRepCard1" msprop:Generator_RowEvArgName="lueXRepCard1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="GehaId" msprop:Generator_ColumnVarNameInTable="columnGehaId" msprop:Generator_ColumnPropNameInRow="GehaId" msprop:Generator_ColumnPropNameInTable="GehaIdColumn" msprop:Generator_UserColumnName="GehaId" type="xs:int" />
@@ -219,7 +220,7 @@ FROM            TBLLabel</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GridXRepCard1" msprop:Generator_TableClassName="GridXRepCard1DataTable" msprop:Generator_TableVarName="tableGridXRepCard1" msprop:Generator_RowChangedName="GridXRepCard1RowChanged" msprop:Generator_TablePropName="GridXRepCard1" msprop:Generator_RowDeletingName="GridXRepCard1RowDeleting" msprop:Generator_RowChangingName="GridXRepCard1RowChanging" msprop:Generator_RowEvHandlerName="GridXRepCard1RowChangeEventHandler" msprop:Generator_RowDeletedName="GridXRepCard1RowDeleted" msprop:Generator_RowClassName="GridXRepCard1Row" msprop:Generator_UserTableName="GridXRepCard1" msprop:Generator_RowEvArgName="GridXRepCard1RowChangeEvent">
+        <xs:element name="GridXRepCard1" msprop:Generator_TableClassName="GridXRepCard1DataTable" msprop:Generator_TableVarName="tableGridXRepCard1" msprop:Generator_TablePropName="GridXRepCard1" msprop:Generator_RowDeletingName="GridXRepCard1RowDeleting" msprop:Generator_RowChangingName="GridXRepCard1RowChanging" msprop:Generator_RowEvHandlerName="GridXRepCard1RowChangeEventHandler" msprop:Generator_RowDeletedName="GridXRepCard1RowDeleted" msprop:Generator_UserTableName="GridXRepCard1" msprop:Generator_RowChangedName="GridXRepCard1RowChanged" msprop:Generator_RowEvArgName="GridXRepCard1RowChangeEvent" msprop:Generator_RowClassName="GridXRepCard1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DataId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnDataId" msprop:Generator_ColumnPropNameInRow="DataId" msprop:Generator_ColumnPropNameInTable="DataIdColumn" msprop:Generator_UserColumnName="DataId" type="xs:int" />
@@ -270,7 +271,7 @@ FROM            TBLLabel</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TblControl" msprop:Generator_TableClassName="TblControlDataTable" msprop:Generator_TableVarName="tableTblControl" msprop:Generator_TablePropName="TblControl" msprop:Generator_RowDeletingName="TblControlRowDeleting" msprop:Generator_RowChangingName="TblControlRowChanging" msprop:Generator_RowEvHandlerName="TblControlRowChangeEventHandler" msprop:Generator_RowDeletedName="TblControlRowDeleted" msprop:Generator_UserTableName="TblControl" msprop:Generator_RowChangedName="TblControlRowChanged" msprop:Generator_RowEvArgName="TblControlRowChangeEvent" msprop:Generator_RowClassName="TblControlRow">
+        <xs:element name="TblControl" msprop:Generator_TableClassName="TblControlDataTable" msprop:Generator_TableVarName="tableTblControl" msprop:Generator_RowChangedName="TblControlRowChanged" msprop:Generator_TablePropName="TblControl" msprop:Generator_RowDeletingName="TblControlRowDeleting" msprop:Generator_RowChangingName="TblControlRowChanging" msprop:Generator_RowEvHandlerName="TblControlRowChangeEventHandler" msprop:Generator_RowDeletedName="TblControlRowDeleted" msprop:Generator_RowClassName="TblControlRow" msprop:Generator_UserTableName="TblControl" msprop:Generator_RowEvArgName="TblControlRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="GehaId" msprop:Generator_ColumnVarNameInTable="columnGehaId" msprop:Generator_ColumnPropNameInRow="GehaId" msprop:Generator_ColumnPropNameInTable="GehaIdColumn" msprop:Generator_UserColumnName="GehaId" type="xs:int" />
@@ -283,7 +284,7 @@ FROM            TBLLabel</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="XRepCard1" msprop:Generator_TableClassName="XRepCard1DataTable" msprop:Generator_TableVarName="tableXRepCard1" msprop:Generator_TablePropName="XRepCard1" msprop:Generator_RowDeletingName="XRepCard1RowDeleting" msprop:Generator_RowChangingName="XRepCard1RowChanging" msprop:Generator_RowEvHandlerName="XRepCard1RowChangeEventHandler" msprop:Generator_RowDeletedName="XRepCard1RowDeleted" msprop:Generator_UserTableName="XRepCard1" msprop:Generator_RowChangedName="XRepCard1RowChanged" msprop:Generator_RowEvArgName="XRepCard1RowChangeEvent" msprop:Generator_RowClassName="XRepCard1Row">
+        <xs:element name="XRepCard1" msprop:Generator_TableClassName="XRepCard1DataTable" msprop:Generator_TableVarName="tableXRepCard1" msprop:Generator_RowChangedName="XRepCard1RowChanged" msprop:Generator_TablePropName="XRepCard1" msprop:Generator_RowDeletingName="XRepCard1RowDeleting" msprop:Generator_RowChangingName="XRepCard1RowChanging" msprop:Generator_RowEvHandlerName="XRepCard1RowChangeEventHandler" msprop:Generator_RowDeletedName="XRepCard1RowDeleted" msprop:Generator_RowClassName="XRepCard1Row" msprop:Generator_UserTableName="XRepCard1" msprop:Generator_RowEvArgName="XRepCard1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DataId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnDataId" msprop:Generator_ColumnPropNameInRow="DataId" msprop:Generator_ColumnPropNameInTable="DataIdColumn" msprop:Generator_UserColumnName="DataId" type="xs:int" />
@@ -455,6 +456,13 @@ FROM            TBLLabel</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="text13" msprop:Generator_ColumnVarNameInTable="columntext13" msprop:Generator_ColumnPropNameInRow="text13" msprop:Generator_ColumnPropNameInTable="text13Column" msprop:Generator_UserColumnName="text13" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

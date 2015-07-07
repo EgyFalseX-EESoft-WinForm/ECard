@@ -41,8 +41,6 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.XPSCSData = new DevExpress.Xpo.XPServerCollectionSource(this.components);
-            this.sessionData = new DevExpress.Xpo.Session(this.components);
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditGehaId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
@@ -66,22 +64,25 @@
             this.coltext12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colimgpath = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditallimgpath = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.XPSCSData = new DevExpress.Xpo.XPServerCollectionSource(this.components);
+            this.sessionData = new DevExpress.Xpo.Session(this.components);
             this.SSM = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ECard.Forms.Main.WaitWindowFrm), true, true, DevExpress.XtraSplashScreen.ParentType.UserControl);
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new ECard.Datasource.dsDataTableAdapters.UsersTableAdapter();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.cDGehaTableAdapter = new ECard.Datasource.dsDataTableAdapters.CDGehaTableAdapter();
+            this.coltext13 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditGehaId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDGehaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditallimgpath)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,21 +197,6 @@
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
             // 
-            // XPSCSData
-            // 
-            this.XPSCSData.AllowEdit = true;
-            this.XPSCSData.AllowNew = true;
-            this.XPSCSData.AllowRemove = true;
-            this.XPSCSData.DeleteObjectOnRemove = true;
-            this.XPSCSData.ObjectType = typeof(ECard.Datasource.dsData.TBLALLDataDataTable);
-            this.XPSCSData.Session = this.sessionData;
-            // 
-            // sessionData
-            // 
-            this.sessionData.IsObjectModifiedOnNonPersistentPropertyChange = null;
-            this.sessionData.TrackPropertiesModifications = false;
-            this.sessionData.BeforeCommitTransaction += new DevExpress.Xpo.SessionManipulationEventHandler(this.sessionData_BeforeCommitTransaction);
-            // 
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -228,6 +214,7 @@
             this.coltext10,
             this.coltext11,
             this.coltext12,
+            this.coltext13,
             this.colimgpath});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
@@ -480,7 +467,7 @@
             this.colimgpath.FieldName = "imgpath";
             this.colimgpath.Name = "colimgpath";
             this.colimgpath.Visible = true;
-            this.colimgpath.VisibleIndex = 14;
+            this.colimgpath.VisibleIndex = 15;
             this.colimgpath.Width = 77;
             // 
             // repositoryItemButtonEditallimgpath
@@ -491,6 +478,21 @@
             this.repositoryItemButtonEditallimgpath.Name = "repositoryItemButtonEditallimgpath";
             this.repositoryItemButtonEditallimgpath.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.repositoryItemButtonEditallimgpath.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditallimgpath_ButtonClick);
+            // 
+            // XPSCSData
+            // 
+            this.XPSCSData.AllowEdit = true;
+            this.XPSCSData.AllowNew = true;
+            this.XPSCSData.AllowRemove = true;
+            this.XPSCSData.DeleteObjectOnRemove = true;
+            this.XPSCSData.ObjectType = typeof(ECard.Datasource.dsData.TBLALLDataDataTable);
+            this.XPSCSData.Session = this.sessionData;
+            // 
+            // sessionData
+            // 
+            this.sessionData.IsObjectModifiedOnNonPersistentPropertyChange = null;
+            this.sessionData.TrackPropertiesModifications = false;
+            this.sessionData.BeforeCommitTransaction += new DevExpress.Xpo.SessionManipulationEventHandler(this.sessionData_BeforeCommitTransaction);
             // 
             // usersBindingSource
             // 
@@ -504,6 +506,18 @@
             // cDGehaTableAdapter
             // 
             this.cDGehaTableAdapter.ClearBeforeFill = true;
+            // 
+            // coltext13
+            // 
+            this.coltext13.AppearanceCell.Options.UseTextOptions = true;
+            this.coltext13.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext13.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltext13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltext13.Caption = "نص13";
+            this.coltext13.FieldName = "text13";
+            this.coltext13.Name = "coltext13";
+            this.coltext13.Visible = true;
+            this.coltext13.VisibleIndex = 14;
             // 
             // TBLALLDataUC
             // 
@@ -520,14 +534,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditGehaId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDGehaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditallimgpath)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -576,6 +590,7 @@
         private Datasource.dsDataTableAdapters.CDGehaTableAdapter cDGehaTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn coltext11;
         private DevExpress.XtraGrid.Columns.GridColumn coltext12;
+        private DevExpress.XtraGrid.Columns.GridColumn coltext13;
 
 
     }

@@ -1432,6 +1432,8 @@ namespace ECard.Datasource {
             
             private global::System.Data.DataColumn columnTextColor;
             
+            private global::System.Data.DataColumn columntext13;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public XRepCard1DataTable() {
@@ -1691,6 +1693,14 @@ namespace ECard.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn text13Column {
+                get {
+                    return this.columntext13;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1753,7 +1763,8 @@ namespace ECard.Datasource {
                         string text10, 
                         string text11, 
                         string text12, 
-                        string TextColor) {
+                        string TextColor, 
+                        string text13) {
                 XRepCard1Row rowXRepCard1Row = ((XRepCard1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1783,7 +1794,8 @@ namespace ECard.Datasource {
                         text10,
                         text11,
                         text12,
-                        TextColor};
+                        TextColor,
+                        text13};
                 rowXRepCard1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowXRepCard1Row);
                 return rowXRepCard1Row;
@@ -1834,6 +1846,7 @@ namespace ECard.Datasource {
                 this.columntext11 = base.Columns["text11"];
                 this.columntext12 = base.Columns["text12"];
                 this.columnTextColor = base.Columns["TextColor"];
+                this.columntext13 = base.Columns["text13"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1895,6 +1908,8 @@ namespace ECard.Datasource {
                 base.Columns.Add(this.columntext12);
                 this.columnTextColor = new global::System.Data.DataColumn("TextColor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTextColor);
+                this.columntext13 = new global::System.Data.DataColumn("text13", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntext13);
                 this.columnDataId.AutoIncrement = true;
                 this.columnDataId.AutoIncrementSeed = -1;
                 this.columnDataId.AutoIncrementStep = -1;
@@ -1940,6 +1955,7 @@ namespace ECard.Datasource {
                 this.columntext12.MaxLength = 150;
                 this.columnTextColor.ReadOnly = true;
                 this.columnTextColor.MaxLength = 50;
+                this.columntext13.MaxLength = 150;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2911,6 +2927,22 @@ namespace ECard.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string text13 {
+                get {
+                    try {
+                        return ((string)(this[this.tableXRepCard1.text13Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'text13\' in table \'XRepCard1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXRepCard1.text13Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsimgpathNull() {
                 return this.IsNull(this.tableXRepCard1.imgpathColumn);
             }
@@ -3207,6 +3239,18 @@ namespace ECard.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTextColorNull() {
                 this[this.tableXRepCard1.TextColorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istext13Null() {
+                return this.IsNull(this.tableXRepCard1.text13Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settext13Null() {
+                this[this.tableXRepCard1.text13Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -4025,6 +4069,7 @@ namespace ECard.Datasource.dsQryTableAdapters {
             tableMapping.ColumnMappings.Add("text11", "text11");
             tableMapping.ColumnMappings.Add("text12", "text12");
             tableMapping.ColumnMappings.Add("TextColor", "TextColor");
+            tableMapping.ColumnMappings.Add("text13", "text13");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -4081,10 +4126,11 @@ namespace ECard.Datasource.dsQryTableAdapters {
                 "      LabelText\r\n                                FROM            TBLLabel AS TBL" +
                 "Label_5\r\n                                WHERE        (GehaId = TBLALLData.GehaI" +
                 "d) AND (LabelOrder = 12)) AS text12lbl, CONVERT(Date, [text6], 103) AS [text6], " +
-                "text7, text8, text9, text10, text11, text12,\r\n                             (SELE" +
-                "CT        TextColor\r\n                                FROM            CDGeha AS C" +
-                "DGeha_1\r\n                                WHERE        (GehaId = TBLALLData.GehaI" +
-                "d)) AS TextColor\r\nFROM            TBLALLData\r\nWHERE        (GehaId = @GehaId)";
+                "text7, text8, text9, text10, text11, text12,text13,\r\n                           " +
+                "  (SELECT        TextColor\r\n                                FROM            CDGe" +
+                "ha AS CDGeha_1\r\n                                WHERE        (GehaId = TBLALLDat" +
+                "a.GehaId)) AS TextColor\r\nFROM            TBLALLData\r\nWHERE        (GehaId = @Geh" +
+                "aId)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GehaId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "GehaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
