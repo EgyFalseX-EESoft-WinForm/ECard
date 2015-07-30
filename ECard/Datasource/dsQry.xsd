@@ -125,10 +125,11 @@ WHERE        (GehaId = @GehaId)</CommandText>
                                 WHERE        (GehaId = TBLALLData.GehaId) AND (LabelOrder = 11)) AS text11lbl,
                              (SELECT        LabelText
                                 FROM            TBLLabel AS TBLLabel_5
-                                WHERE        (GehaId = TBLALLData.GehaId) AND (LabelOrder = 12)) AS text12lbl, CONVERT(Date, [text6], 103) AS [text6], text7, text8, text9, text10, text11, text12,text13,
+                                WHERE        (GehaId = TBLALLData.GehaId) AND (LabelOrder = 12)) AS text12lbl, CONVERT(Date, [text6], 103) AS [text6], text7, text8, text9, text10, text11, text12,text13,text14,
                              (SELECT        TextColor
                                 FROM            CDGeha AS CDGeha_1
                                 WHERE        (GehaId = TBLALLData.GehaId)) AS TextColor
+,CASE WHEN EXISTS((SELECT TOP 1 [DataId] FROM [dbo].[TBLPrintOut] WHERE [DataId] = TBLALLData.DataId)) THEN CAST('True' AS bit) ELSE CAST('False' AS bit) END AS Printed
 FROM            TBLALLData
 WHERE        (GehaId = @GehaId)</CommandText>
                     <Parameters>
@@ -168,6 +169,8 @@ WHERE        (GehaId = @GehaId)</CommandText>
               <Mapping SourceColumn="text12" DataSetColumn="text12" />
               <Mapping SourceColumn="TextColor" DataSetColumn="TextColor" />
               <Mapping SourceColumn="text13" DataSetColumn="text13" />
+              <Mapping SourceColumn="Printed" DataSetColumn="Printed" />
+              <Mapping SourceColumn="text14" DataSetColumn="text14" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -460,6 +463,14 @@ FROM            TBLLabel</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="text13" msprop:Generator_ColumnVarNameInTable="columntext13" msprop:Generator_ColumnPropNameInRow="text13" msprop:Generator_ColumnPropNameInTable="text13Column" msprop:Generator_UserColumnName="text13" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Printed" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPrinted" msprop:Generator_ColumnPropNameInRow="Printed" msprop:Generator_ColumnPropNameInTable="PrintedColumn" msprop:Generator_UserColumnName="Printed" type="xs:boolean" minOccurs="0" />
+              <xs:element name="text14" msprop:Generator_ColumnVarNameInTable="columntext14" msprop:Generator_ColumnPropNameInRow="text14" msprop:Generator_ColumnPropNameInTable="text14Column" msprop:Generator_UserColumnName="text14" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />

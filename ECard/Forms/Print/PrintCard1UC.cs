@@ -22,46 +22,57 @@ namespace ECard.Forms.Print
         {
             xRepCard1TableAdapter.Fill(dsQry.XRepCard1, Convert.ToInt32(lueTBLALLData.EditValue));
         }
-        private void btnPrint_Click(object sender, EventArgs e)
+        private void lueCardLayout_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            if (e.Button.Kind != DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)
+                return;
             if (FXFW.SqlDB.IsNullOrEmpty(lueTBLALLData.EditValue))
             {
                 MsgDlg.Show("يجب اختيار من القائمة", MsgDlg.MessageType.Error);
                 return;
             }
-
             Datasource.dsQry.XRepCard1DataTable PrintTbl = new Datasource.dsQry.XRepCard1DataTable();
             for (int i = 0; i < gridViewMain.SelectedRowsCount; i++)
             {
                 PrintTbl.Rows.Add(gridViewMain.GetDataRow(gridViewMain.GetSelectedRows()[i]).ItemArray);
+            }
+            switch (lueCardLayout.SelectedIndex)
+            {
+                case 0: //Card 1
+                    ECard.Forms.XRep.XRepCard1 FrmRep1 = new ECard.Forms.XRep.XRepCard1(PrintTbl);
+                    ECard.Classes.Misc.ShowPrintPreview(FrmRep1, true);
+                    break;
+                case 1: //Card 2
+                    ECard.Forms.XRep.XRepCard2 FrmRep2 = new ECard.Forms.XRep.XRepCard2(PrintTbl);
+                    ECard.Classes.Misc.ShowPrintPreview(FrmRep2, true);
+                    break;
+                case 2: //Card 3
+                    ECard.Forms.XRep.XRepCard3 FrmRep3 = new ECard.Forms.XRep.XRepCard3(PrintTbl);
+                    ECard.Classes.Misc.ShowPrintPreview(FrmRep3, true);
+                    break;
+                default:
+                    break;
             }
             //Saving Printing Order
-            //if (!Classes.Managers.DataManager.SavePrintOrder(PrintTbl))
-            //{
-            //    MsgDlg.Show("لم يتم الحفظ. لن نتمكن من الطباعة", MsgDlg.MessageType.Error);
-            //    return;
-            //}
-            //Show Print Form
-            ECard.Forms.XRep.XRepCard1 FrmRep = new ECard.Forms.XRep.XRepCard1(PrintTbl);
-            ECard.Classes.Misc.ShowPrintPreview(FrmRep);
-        }
-        private void btnPrint2_Click(object sender, EventArgs e)
-        {
-            if (FXFW.SqlDB.IsNullOrEmpty(lueTBLALLData.EditValue))
+            if (MsgDlg.Show("هل تريد حقظ الطباعة؟", MsgDlg.MessageType.Question) == DialogResult.Yes)
             {
-                MsgDlg.Show("يجب اختيار من القائمة", MsgDlg.MessageType.Error);
+                if (!Classes.Managers.DataManager.SavePrintOrder(PrintTbl))
+                {
+                    MsgDlg.Show("لم يتم الحفظ", MsgDlg.MessageType.Error);
+                    return;
+                }
+            }
+        }
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            // Check whether the GridControl can be previewed.
+            if (!gridControlMain.IsPrintingAvailable)
+            {
+                MsgDlg.Show("The 'DevExpress.XtraPrinting' library is not found", MsgDlg.MessageType.Warn);
                 return;
             }
-
-            Datasource.dsQry.XRepCard1DataTable PrintTbl = new Datasource.dsQry.XRepCard1DataTable();
-            for (int i = 0; i < gridViewMain.SelectedRowsCount; i++)
-            {
-                PrintTbl.Rows.Add(gridViewMain.GetDataRow(gridViewMain.GetSelectedRows()[i]).ItemArray);
-            }
-            //Show Print Form
-            ECard.Forms.XRep.XRepCard2 FrmRep = new ECard.Forms.XRep.XRepCard2(PrintTbl);
-            ECard.Classes.Misc.ShowPrintPreview(FrmRep);
+            // Open the Preview window.
+            gridControlMain.ShowRibbonPrintPreview();
         }
-        
     }
 }

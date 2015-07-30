@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.dsData = new ECard.Datasource.dsData();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.xRepCard1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsQry = new ECard.Datasource.dsQry();
             this.xRepCard1TableAdapter = new ECard.Datasource.dsQryTableAdapters.XRepCard1TableAdapter();
@@ -48,8 +48,10 @@
             this.coltext3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltext4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltext5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPrinted = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.btnPrint2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExport = new DevExpress.XtraEditors.SimpleButton();
+            this.lueCardLayout = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xRepCard1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
@@ -64,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCardLayout.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dsData
@@ -79,17 +82,6 @@
             this.labelControl1.Size = new System.Drawing.Size(25, 13);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "الجهة";
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.Image = global::ECard.Properties.Resources.print_16x16;
-            this.btnPrint.Location = new System.Drawing.Point(585, 24);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(130, 23);
-            this.btnPrint.TabIndex = 2;
-            this.btnPrint.Text = "الطباعة";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // xRepCard1BindingSource
             // 
@@ -176,7 +168,8 @@
             this.coltext2,
             this.coltext3,
             this.coltext4,
-            this.coltext5});
+            this.coltext5,
+            this.colPrinted});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.OptionsSelection.InvertSelection = true;
@@ -245,26 +238,59 @@
             this.coltext5.Visible = true;
             this.coltext5.VisibleIndex = 5;
             // 
+            // colPrinted
+            // 
+            this.colPrinted.AppearanceCell.Options.UseTextOptions = true;
+            this.colPrinted.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPrinted.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPrinted.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPrinted.Caption = "تم الطباعة";
+            this.colPrinted.FieldName = "Printed";
+            this.colPrinted.Name = "colPrinted";
+            this.colPrinted.Visible = true;
+            this.colPrinted.VisibleIndex = 6;
+            // 
             // groupControl3
             // 
-            this.groupControl3.Controls.Add(this.btnPrint2);
-            this.groupControl3.Controls.Add(this.btnPrint);
+            this.groupControl3.Controls.Add(this.btnExport);
+            this.groupControl3.Controls.Add(this.lueCardLayout);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControl3.Location = new System.Drawing.Point(0, 300);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(720, 55);
             this.groupControl3.TabIndex = 5;
             // 
-            // btnPrint2
+            // btnExport
             // 
-            this.btnPrint2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint2.Image = global::ECard.Properties.Resources.print_16x16;
-            this.btnPrint2.Location = new System.Drawing.Point(449, 24);
-            this.btnPrint2.Name = "btnPrint2";
-            this.btnPrint2.Size = new System.Drawing.Size(130, 23);
-            this.btnPrint2.TabIndex = 2;
-            this.btnPrint2.Text = "الطباعة 2";
-            this.btnPrint2.Click += new System.EventHandler(this.btnPrint2_Click);
+            this.btnExport.Image = global::ECard.Properties.Resources.grid_16x16;
+            this.btnExport.Location = new System.Drawing.Point(5, 27);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 23);
+            this.btnExport.TabIndex = 4;
+            this.btnExport.Text = "تصدير";
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // lueCardLayout
+            // 
+            this.lueCardLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lueCardLayout.Location = new System.Drawing.Point(474, 26);
+            this.lueCardLayout.Name = "lueCardLayout";
+            this.lueCardLayout.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lueCardLayout.Properties.Appearance.Options.UseFont = true;
+            this.lueCardLayout.Properties.Appearance.Options.UseTextOptions = true;
+            this.lueCardLayout.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lueCardLayout.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 40, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::ECard.Properties.Resources.print_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            this.lueCardLayout.Properties.Items.AddRange(new object[] {
+            "Card1",
+            "Card2",
+            "Card3"});
+            this.lueCardLayout.Properties.NullText = "اختر كارت";
+            this.lueCardLayout.Properties.PopupSizeable = true;
+            this.lueCardLayout.Size = new System.Drawing.Size(222, 22);
+            this.lueCardLayout.TabIndex = 3;
+            this.lueCardLayout.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lueCardLayout_ButtonClick);
             // 
             // PrintCard1UC
             // 
@@ -290,6 +316,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lueCardLayout.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,7 +324,6 @@
         #endregion
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.SimpleButton btnPrint;
         private Datasource.dsData dsData;
         private System.Windows.Forms.BindingSource xRepCard1BindingSource;
         private Datasource.dsQry dsQry;
@@ -316,6 +342,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn coltext4;
         private DevExpress.XtraGrid.Columns.GridColumn coltext5;
         private System.Windows.Forms.BindingSource xRepCard1BindingSource1;
-        private DevExpress.XtraEditors.SimpleButton btnPrint2;
+        private DevExpress.XtraEditors.ComboBoxEdit lueCardLayout;
+        private DevExpress.XtraGrid.Columns.GridColumn colPrinted;
+        private DevExpress.XtraEditors.SimpleButton btnExport;
     }
 }

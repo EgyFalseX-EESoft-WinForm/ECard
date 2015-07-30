@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.txt14 = new DevExpress.XtraReports.UI.XRLabel();
             this.txt13 = new DevExpress.XtraReports.UI.XRLabel();
             this.lbl10 = new DevExpress.XtraReports.UI.XRLabel();
             this.txt10 = new DevExpress.XtraReports.UI.XRLabel();
@@ -76,6 +77,7 @@
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.txt14,
             this.txt13,
             this.lbl10,
             this.txt10,
@@ -102,6 +104,21 @@
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // txt14
+            // 
+            this.txt14.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "XRepCard1.text14")});
+            this.txt14.Dpi = 254F;
+            this.txt14.Font = new System.Drawing.Font("GE SS Two Light", 4.2F, System.Drawing.FontStyle.Bold);
+            this.txt14.LocationFloat = new DevExpress.Utils.PointFloat(24.99996F, 446.0833F);
+            this.txt14.Multiline = true;
+            this.txt14.Name = "txt14";
+            this.txt14.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.txt14.SizeF = new System.Drawing.SizeF(838.0486F, 113.9167F);
+            this.txt14.StylePriority.UseFont = false;
+            this.txt14.StylePriority.UseTextAlignment = false;
+            this.txt14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
             // txt13
             // 
@@ -691,5 +708,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell3;
         private DevExpress.XtraReports.UI.XRLabel txt13;
+        private DevExpress.XtraReports.UI.XRLabel txt14;
     }
 }

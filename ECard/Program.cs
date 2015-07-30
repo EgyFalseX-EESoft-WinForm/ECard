@@ -20,6 +20,7 @@ namespace ECard
         {
             log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo(Application.StartupPath + "\\Classes\\Log4Net\\L4N.config"));
 
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DevExpress.Skins.SkinManager.EnableFormSkins();
@@ -36,7 +37,7 @@ namespace ECard
                     //DatabaseScripts.FireScript();//add my views
                     FrmLogin.ShowDialog();
                 }
-
+                //MessageBox.Show(Application.ProductVersion);
                 Application.Run(new Forms.Main.MainForm());
             }
             

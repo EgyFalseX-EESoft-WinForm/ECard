@@ -221,6 +221,12 @@
     <Compile Include="Forms\Print\PrintCard1UC.Designer.cs">
       <DependentUpon>PrintCard1UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\XRep\XRepCard3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\XRep\XRepCard3.Designer.cs">
+      <DependentUpon>XRepCard3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\XRep\XRepCard2.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -273,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Print\PrintCard1UC.resx">
       <DependentUpon>PrintCard1UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XRep\XRepCard3.resx">
+      <DependentUpon>XRepCard3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\XRep\XRepCard2.resx">
       <DependentUpon>XRepCard2.cs</DependentUpon>
@@ -347,6 +356,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ECard.ico" />
+    <None Include="Resources\grid_16x16.png" />
     <None Include="Resources\print_16x16.png" />
     <None Include="Resources\Login_Back.png" />
     <None Include="Resources\ECard.png" />

@@ -41,6 +41,7 @@ No
 11
 12
 13
+14
 img
 _______________________________________________
 ", Environment.NewLine);
@@ -163,6 +164,7 @@ _______________________________________________
                 SqlRow.text11 = row["11"].ToString();
                 SqlRow.text12 = row["12"].ToString();
                 SqlRow.text13 = row["13"].ToString();
+                SqlRow.text14 = row["14"].ToString();
                 SqlRow.imgpath = row["img"].ToString();
                 SqlRow.datein = DateIn;
                 SqlRow.userin = UserManager.UserInfo.UserID;
