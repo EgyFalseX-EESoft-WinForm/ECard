@@ -50,6 +50,10 @@ namespace ECard.Forms.Print
                     ECard.Forms.XRep.XRepCard3 FrmRep3 = new ECard.Forms.XRep.XRepCard3(PrintTbl);
                     ECard.Classes.Misc.ShowPrintPreview(FrmRep3, true);
                     break;
+                case 3: //Card 4
+                    ECard.Forms.XRep.XRepCard4 FrmRep4 = new ECard.Forms.XRep.XRepCard4(PrintTbl);
+                    ECard.Classes.Misc.ShowPrintPreview(FrmRep4, true);
+                    break;
                 default:
                     break;
             }

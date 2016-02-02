@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.dsData = new ECard.Datasource.dsData();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xRepCard1BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -148,10 +148,10 @@
             // 
             this.gridControlMain.DataSource = this.xRepCard1BindingSource1;
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlMain.Location = new System.Drawing.Point(2, 21);
+            this.gridControlMain.Location = new System.Drawing.Point(2, 20);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.Name = "gridControlMain";
-            this.gridControlMain.Size = new System.Drawing.Size(716, 283);
+            this.gridControlMain.Size = new System.Drawing.Size(716, 284);
             this.gridControlMain.TabIndex = 0;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
@@ -281,11 +281,12 @@
             this.lueCardLayout.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lueCardLayout.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 40, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::ECard.Properties.Resources.print_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 40, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::ECard.Properties.Resources.print_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.lueCardLayout.Properties.Items.AddRange(new object[] {
             "Card1",
             "Card2",
-            "Card3"});
+            "Card3",
+            "Card4"});
             this.lueCardLayout.Properties.NullText = "اختر كارت";
             this.lueCardLayout.Properties.PopupSizeable = true;
             this.lueCardLayout.Size = new System.Drawing.Size(222, 22);
