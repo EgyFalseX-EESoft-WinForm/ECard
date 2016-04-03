@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             this.ribbonControlMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
             this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.backstageViewTabItem1 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
-            this.imageCollection16 = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection16 = new DevExpress.Utils.ImageCollection();
             this.mbCDGeha = new DevExpress.XtraBars.BarButtonItem();
             this.mbTBLLabel = new DevExpress.XtraBars.BarButtonItem();
             this.mbImportTBLALLData = new DevExpress.XtraBars.BarButtonItem();
@@ -46,7 +45,7 @@
             this.mbRoleDetail = new DevExpress.XtraBars.BarButtonItem();
             this.mbUserRoles = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
-            this.imageCollection32 = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection32 = new DevExpress.Utils.ImageCollection();
             this.ribbonPageCode = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupCode = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageData = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -56,6 +55,8 @@
             this.ribbonPageQry = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPagePrint = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupPrint = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.mbRepEditor = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             this.backstageViewControl1.SuspendLayout();
@@ -79,10 +80,11 @@
             this.mbRoles,
             this.mbRoleDetail,
             this.mbUserRoles,
-            this.ribbonGalleryBarItem1});
+            this.ribbonGalleryBarItem1,
+            this.mbRepEditor});
             this.ribbonControlMain.LargeImages = this.imageCollection32;
             this.ribbonControlMain.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControlMain.MaxItemId = 2;
+            this.ribbonControlMain.MaxItemId = 3;
             this.ribbonControlMain.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControlMain.Name = "ribbonControlMain";
             this.ribbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -92,7 +94,7 @@
             this.ribbonPageQry,
             this.ribbonPagePrint});
             this.ribbonControlMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControlMain.Size = new System.Drawing.Size(1014, 144);
+            this.ribbonControlMain.Size = new System.Drawing.Size(1014, 143);
             // 
             // backstageViewControl1
             // 
@@ -138,6 +140,8 @@
             this.imageCollection16.Images.SetKeyName(5, "customization_16x16.png");
             this.imageCollection16.InsertGalleryImage("publicfix_16x16.png", "images/people/publicfix_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/people/publicfix_16x16.png"), 6);
             this.imageCollection16.Images.SetKeyName(6, "publicfix_16x16.png");
+            this.imageCollection16.InsertGalleryImage("designreport_16x16.png", "images/reports/designreport_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/reports/designreport_16x16.png"), 7);
+            this.imageCollection16.Images.SetKeyName(7, "designreport_16x16.png");
             // 
             // mbCDGeha
             // 
@@ -257,6 +261,8 @@
             this.imageCollection32.Images.SetKeyName(5, "customization_32x32.png");
             this.imageCollection32.InsertGalleryImage("publicfix_32x32.png", "images/people/publicfix_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/people/publicfix_32x32.png"), 6);
             this.imageCollection32.Images.SetKeyName(6, "publicfix_32x32.png");
+            this.imageCollection32.InsertGalleryImage("designreport_32x32.png", "images/reports/designreport_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/reports/designreport_32x32.png"), 7);
+            this.imageCollection32.Images.SetKeyName(7, "designreport_32x32.png");
             // 
             // ribbonPageCode
             // 
@@ -310,7 +316,8 @@
             // ribbonPagePrint
             // 
             this.ribbonPagePrint.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroupPrint});
+            this.ribbonPageGroupPrint,
+            this.ribbonPageGroup2});
             this.ribbonPagePrint.Name = "ribbonPagePrint";
             this.ribbonPagePrint.Text = "الطباعة";
             // 
@@ -319,6 +326,22 @@
             this.ribbonPageGroupPrint.ItemLinks.Add(this.mbPrintCard1);
             this.ribbonPageGroupPrint.Name = "ribbonPageGroupPrint";
             this.ribbonPageGroupPrint.Text = "طباعة الكروت";
+            // 
+            // mbRepEditor
+            // 
+            this.mbRepEditor.Caption = "تصميم الكروت";
+            this.mbRepEditor.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.mbRepEditor.Id = 2;
+            this.mbRepEditor.ImageIndex = 7;
+            this.mbRepEditor.LargeImageIndex = 7;
+            this.mbRepEditor.Name = "mbRepEditor";
+            this.mbRepEditor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRepEditor_ItemClick);
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.mbRepEditor);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "تصميم";
             // 
             // MainForm
             // 
@@ -371,6 +394,8 @@
         private DevExpress.XtraBars.BarButtonItem mbUserRoles;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
+        private DevExpress.XtraBars.BarButtonItem mbRepEditor;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }
 

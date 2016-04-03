@@ -137,6 +137,10 @@ namespace ECard.Forms.Main
         {
             ShowForm(new ECard.Forms.Permission.UserRolesFrm());
         }
+        private void mbRepEditor_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowUC(new ECard.Forms.Data.RepEditorUC(), "تصميم");
+        }
 
         
 
